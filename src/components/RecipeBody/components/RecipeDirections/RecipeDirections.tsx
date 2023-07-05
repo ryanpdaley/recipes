@@ -1,4 +1,4 @@
-import { Card, VerticalStack, Text, List } from "@shopify/polaris";
+import { VerticalStack, Text, List } from "@shopify/polaris";
 import type { recipeDirectionsProps } from "../../../../types";
 
 const RecipeDirections = ({ recipeDirections }: recipeDirectionsProps) => {
