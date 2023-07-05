@@ -1,0 +1,6 @@
+.recipe-body {
+  padding: var(--p-space-5) var(--p-space-8);
+}
+.recipe-data {
+  text-align: center;
+}
