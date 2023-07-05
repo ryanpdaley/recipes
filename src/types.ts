@@ -6,9 +6,9 @@ interface Recipe {
 
 interface RecipeInfo {
   title: string;
-  makes: string;
-  prepTime: { value: number; unit: string };
-  cookTime: { value: number; unit: string };
+  makes: null | string;
+  prepTime: null | { value: number; unit: string };
+  cookTime: null | { value: number; unit: string };
   description: string;
 }
 
@@ -16,7 +16,7 @@ interface Ingredient {
   name: string;
   measurement: number;
   measurementUnit: string;
-  qualifierString: string | null;
+  qualifierString: null | string;
   isConvertibleUnit: boolean;
 }
 
