@@ -14,25 +14,40 @@ const Description = ({ recipeInfo }: RecipeInfoProps) => {
 };
 
 const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
+  const yieldBlock =
+    recipeInfo.makes !== null ? (
+      <div>
+        <strong>Yields: </strong>
+        {recipeInfo.makes}
+      </div>
+    ) : null;
+  const cookTimeBlock =
+    recipeInfo.cookTime !== null ? (
+      <p>
+        <strong>Cook Time: </strong>
+        {`${recipeInfo.cookTime.value} ${recipeInfo.cookTime.unit}`}
+      </p>
+    ) : null;
+  const prepTimeBlock =
+    recipeInfo.prepTime !== null ? (
+      <p>
+        <strong>Prep Time: </strong>
+        {`${recipeInfo.prepTime.value} ${recipeInfo.prepTime.unit}`}
+      </p>
+    ) : null;
+  const blockCount =
+    (yieldBlock ? 1 : 0) + (cookTimeBlock ? 1 : 0) + (prepTimeBlock ? 1 : 0);
   return (
     <div className="recipe-data">
-      <HorizontalGrid columns={3}>
-        <p>
-          <strong>Yields: </strong>
-          {recipeInfo.makes}
-        </p>
-        <p>
-          <strong>Cook Time: </strong>
-          {`${recipeInfo.cookTime.value} ${recipeInfo.cookTime.unit}`}
-        </p>
-        <p>
-          <strong>Prep Time: </strong>
-          {`${recipeInfo.prepTime.value} ${recipeInfo.prepTime.unit}`}
-        </p>
+      <HorizontalGrid columns={blockCount}>
+        {yieldBlock}
+        {cookTimeBlock}
+        {prepTimeBlock}
       </HorizontalGrid>
     </div>
   );
 };
+
 const RecipeHead = ({ recipeInfo }: RecipeInfoProps) => {
   return (
     <div className="recipe-head">
