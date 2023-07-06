@@ -20,6 +20,10 @@ interface Ingredient {
   isConvertibleUnit: boolean;
 }
 
+export interface fractionMap {
+  [key: number]: number;
+}
+
 export type recipeDirectionsProps = { recipeDirections: string[] };
 export type RecipeIngredientsProps = { recipeIngredients: Ingredient[] };
 export type RecipeInfoProps = { recipeInfo: RecipeInfo };
