@@ -4,3 +4,8 @@
 .recipe-data {
   text-align: center;
 }
+
+.recipe-body-ingredient-check {
+  margin-right: var(--p-space-2);
+  vertical-align: top;
+}
