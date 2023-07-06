@@ -1,6 +1,6 @@
 import { VerticalStack, Checkbox, Text } from "@shopify/polaris";
 import { RecipeIngredientsProps } from "../../../../types";
-import { FRACTION_DICTIONARY } from "./constants";
+import { FRACTION_DICTIONARY } from "../../../../constants";
 
 const convertDecimals = (measurement: number): string => {
   const decimal = measurement % 1;
