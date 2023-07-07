@@ -8,4 +8,9 @@
 .recipe-body-ingredient-check {
   margin-right: var(--p-space-2);
   vertical-align: top;
+  text-align: center;
+}
+
+.recipe-body-ingredient-label {
+  padding: 0 var(--p-space-4);
 }

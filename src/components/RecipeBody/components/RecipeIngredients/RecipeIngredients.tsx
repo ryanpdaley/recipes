@@ -68,7 +68,7 @@ const IngredientsSection = ({
                     onChange={handleChange}
                   />
                 </td>
-                <td>
+                <td className="recipe-body-ingredient-label">
                   <label>{label}</label>
                 </td>
               </tr>
