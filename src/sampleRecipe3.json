@@ -10,7 +10,11 @@
       "value": 25,
       "unit": "minutes"
     },
-    "description": "It's not news that I love a good sheet pan meal, and these recipes are some of the most frequently requested from y'all as well! Clean up is a breeze, minimal preparation is required and your meal prep for the week is taken care of…what more could you need?"
+    "description": "It's not news that I love a good sheet pan meal, and these recipes are some of the most frequently requested from y'all as well! Clean up is a breeze, minimal preparation is required and your meal prep for the week is taken care of…what more could you need?",
+    "source": {
+      "label": "Goodness with G",
+      "url": "https://www.goodnesswithg.com/blog/sheet-pan-cashew-chicken"
+    }
   },
   "ingredients": [
     {

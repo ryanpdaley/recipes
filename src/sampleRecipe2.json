@@ -10,7 +10,11 @@
       "value": 1.25,
       "unit": "hours"
     },
-    "description": "This banana bread recipe creates the most delicious, moist loaf with loads of banana flavor. Why compromise the banana flavor? Friends and family love my recipe and say it's by far the best! It tastes wonderful toasted. Enjoy!"
+    "description": "This banana bread recipe creates the most delicious, moist loaf with loads of banana flavor. Why compromise the banana flavor? Friends and family love my recipe and say it's by far the best! It tastes wonderful toasted. Enjoy!",
+    "source": {
+      "label": "allrecipes.com",
+      "url": "https://www.allrecipes.com/recipe/20144/banana-banana-bread/"
+    }
   },
   "ingredients": [
     {

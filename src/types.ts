@@ -10,6 +10,7 @@ interface RecipeInfo {
   prepTime: null | { value: number; unit: string };
   cookTime: null | { value: number; unit: string };
   description: null | string;
+  source: null | { label: string; url: null | string };
 }
 
 interface IngredientSection {

@@ -1,4 +1,11 @@
-import { Card, VerticalStack, HorizontalGrid, Text } from "@shopify/polaris";
+import {
+  Card,
+  VerticalStack,
+  HorizontalGrid,
+  Text,
+  Link,
+  HorizontalStack,
+} from "@shopify/polaris";
 
 import type { RecipeInfoProps } from "../../types";
 import { convertDecimals } from "../../lib/formatters";
@@ -22,6 +29,7 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
         {recipeInfo.makes}
       </div>
     ) : null;
+
   const cookTimeBlock =
     recipeInfo.cookTime !== null ? (
       <p>
@@ -31,6 +39,7 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
         }`}
       </p>
     ) : null;
+
   const prepTimeBlock =
     recipeInfo.prepTime !== null ? (
       <p>
@@ -40,8 +49,10 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
         }`}
       </p>
     ) : null;
+
   const blockCount =
     (yieldBlock ? 1 : 0) + (cookTimeBlock ? 1 : 0) + (prepTimeBlock ? 1 : 0);
+
   return (
     <div className="recipe-data">
       <HorizontalGrid columns={blockCount}>
@@ -53,6 +64,35 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
   );
 };
 
+const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
+  const sourceLabel = recipeInfo.source?.label;
+  const sourceURL = recipeInfo.source?.url;
+  if (sourceLabel === undefined) return <></>;
+  return (
+    <HorizontalStack align="end">
+      <Text
+        variant="bodyMd"
+        color="subdued"
+        as="p"
+        id="recipe-head-info-sourceLabel"
+      >
+        Source:
+      </Text>
+      {sourceURL === null || sourceURL === undefined ? (
+        <Text variant="bodyMd" color="subdued" as="p">
+          {sourceLabel}
+        </Text>
+      ) : (
+        <Link url={sourceURL} target="_blank">
+          <Text variant="bodyMd" color="subdued" as="p">
+            {sourceLabel}
+          </Text>
+        </Link>
+      )}
+    </HorizontalStack>
+  );
+};
+
 const RecipeHead = ({ recipeInfo }: RecipeInfoProps) => {
   return (
     <div className="recipe-head">
@@ -60,6 +100,7 @@ const RecipeHead = ({ recipeInfo }: RecipeInfoProps) => {
         <VerticalStack gap="5">
           <Description recipeInfo={recipeInfo} />
           <MetaInfo recipeInfo={recipeInfo} />
+          <SourceBlock recipeInfo={recipeInfo} />
         </VerticalStack>
       </Card>
     </div>

@@ -14,3 +14,7 @@
 .recipe-body-ingredient-label {
   padding: 0 var(--p-space-4);
 }
+
+#recipe-head-info-sourceLabel {
+  padding-right: var(--p-space-1);
+}
