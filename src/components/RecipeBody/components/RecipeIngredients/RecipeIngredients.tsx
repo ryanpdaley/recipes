@@ -37,6 +37,12 @@ const RecipeIngredients = ({
         Ingredients:
       </Text>
       <table>
+        <thead>
+          <tr>
+            <th>Need?</th>
+            <th>Item</th>
+          </tr>
+        </thead>
         <tbody>
           {recipeIngredients.map((ingredient) => {
             const qualifierString =

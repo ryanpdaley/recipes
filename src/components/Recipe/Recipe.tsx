@@ -15,8 +15,12 @@ function Recipe() {
   const recipe = sampleRecipe;
 
   const logList = () => {
-    console.log(checkedItems);
+    alert(checkedItems);
   };
+
+  const helpTextString = shoppingListState
+    ? "Selected ingredients appear here."
+    : "Click for shopping list.";
 
   return (
     <AppProvider i18n={translations}>
@@ -30,7 +34,7 @@ function Recipe() {
           {
             content: "Shopping List",
             disabled: shoppingListState,
-            helpText: "Selected ingredients appear here.",
+            helpText: helpTextString,
             onAction: logList,
           },
         ]}
