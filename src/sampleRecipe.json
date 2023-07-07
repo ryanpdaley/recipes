@@ -19,29 +19,29 @@
         {
           "name": "Carrots",
           "measurement": 1,
-          "measurementUnit": "pounds",
+          "measurementUnit": "pound",
           "qualifierString": "medium sized",
           "isConvertibleUnit": true
         },
         {
           "name": "Potatoes",
           "measurement": 3,
-          "measurementUnit": "medium",
-          "qualifierString": "peeled",
+          "measurementUnit": null,
+          "qualifierString": "medium; peeled",
           "isConvertibleUnit": false
         },
         {
           "name": "Celery",
           "measurement": 3,
-          "measurementUnit": "stalks",
-          "qualifierString": "with leaves",
+          "measurementUnit": null,
+          "qualifierString": "stalks with leaves",
           "isConvertibleUnit": false
         },
         {
           "name": "Onions",
           "measurement": 2,
-          "measurementUnit": "medium",
-          "qualifierString": null,
+          "measurementUnit": null,
+          "qualifierString": "medium",
           "isConvertibleUnit": false
         },
         {
@@ -61,14 +61,14 @@
         {
           "name": "Dried dill weed",
           "measurement": 0.25,
-          "measurementUnit": "teaspoons",
+          "measurementUnit": "teaspoon",
           "qualifierString": null,
           "isConvertibleUnit": true
         },
         {
           "name": "Pepper",
           "measurement": 0.25,
-          "measurementUnit": "teaspoons",
+          "measurementUnit": "teaspoon",
           "qualifierString": null,
           "isConvertibleUnit": true
         },
@@ -82,7 +82,7 @@
         {
           "name": "Butter",
           "measurement": 0.25,
-          "measurementUnit": "cups",
+          "measurementUnit": "cup",
           "qualifierString": "or margarine",
           "isConvertibleUnit": true
         },

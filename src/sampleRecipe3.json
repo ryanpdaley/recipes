@@ -40,7 +40,7 @@
         {
           "name": "Unsalted cashews",
           "measurement": 1,
-          "measurementUnit": "cups",
+          "measurementUnit": "cup",
           "qualifierString": null,
           "isConvertibleUnit": true
         },
@@ -101,7 +101,7 @@
         {
           "name": "Honey",
           "measurement": 1,
-          "measurementUnit": "tablespoons",
+          "measurementUnit": "tablespoon",
           "qualifierString": null,
           "isConvertibleUnit": true
         },
