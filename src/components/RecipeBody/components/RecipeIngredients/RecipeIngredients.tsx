@@ -42,14 +42,14 @@ const IngredientsSection = ({
       item.measurement !== null ? convertDecimals(item.measurement) : "";
 
     const measurementUnit =
-      item.measurementUnit !== null ? item.measurementUnit : "";
+      item.measurementUnit !== null ? ` ${item.measurementUnit} ` : " ";
 
     const qualifierString =
       item.qualifierString !== null ? ` (${item.qualifierString})` : "";
 
     parsedItem[
       "rowItem"
-    ] = `${measurementString} ${measurementUnit} ${item.name}`;
+    ] = `${measurementString}${measurementUnit}${item.name}`;
     parsedItem["label"] = `${parsedItem["rowItem"]} ${qualifierString}`;
     return parsedItem;
   };
