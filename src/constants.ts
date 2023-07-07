@@ -1,4 +1,4 @@
-import { fractionMap } from "../../../../types";
+import { fractionMap } from "./types";
 
 export const FRACTION_DICTIONARY: fractionMap = {
   0.25: 188,

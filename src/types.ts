@@ -25,6 +25,16 @@ export interface fractionMap {
 }
 
 export type recipeDirectionsProps = { recipeDirections: string[] };
-export type RecipeIngredientsProps = { recipeIngredients: Ingredient[] };
+export type RecipeIngredientsProps = {
+  recipeIngredients: Ingredient[];
+  checkedItems: string[];
+  setCheckedItems: (val: string[]) => void;
+};
+
 export type RecipeInfoProps = { recipeInfo: RecipeInfo };
-export type RecipeProps = { recipe: Recipe };
+export type RecipeProps = {
+  recipe: Recipe;
+  checkedItems: string[];
+  setCheckedItems: (val: string[]) => void;
+};
+export type IngredientItem = { item: Ingredient };

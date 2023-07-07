@@ -3,11 +3,15 @@ import { RecipeProps } from "../../types";
 import RecipeIngredients from "./components/RecipeIngredients/RecipeIngredients";
 import RecipeDirections from "./components/RecipeDirections/RecipeDirections";
 
-const RecipeBody = ({ recipe }: RecipeProps) => {
+const RecipeBody = ({ recipe, checkedItems, setCheckedItems }: RecipeProps) => {
   return (
     <div className="recipe-body">
       <HorizontalGrid gap="4" columns={["oneThird", "twoThirds"]}>
-        <RecipeIngredients recipeIngredients={recipe.ingredients} />
+        <RecipeIngredients
+          recipeIngredients={recipe.ingredients}
+          checkedItems={checkedItems}
+          setCheckedItems={setCheckedItems}
+        />
         <RecipeDirections recipeDirections={recipe.directions} />
       </HorizontalGrid>
     </div>
