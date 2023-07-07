@@ -14,81 +14,86 @@
   },
   "ingredients": [
     {
-      "name": "Carrots",
-      "measurement": 1,
-      "measurementUnit": "pounds",
-      "qualifierString": "medium sized",
-      "isConvertibleUnit": true
-    },
-    {
-      "name": "Potatoes",
-      "measurement": 3,
-      "measurementUnit": "medium",
-      "qualifierString": "peeled",
-      "isConvertibleUnit": false
-    },
-    {
-      "name": "Celery",
-      "measurement": 3,
-      "measurementUnit": "stalks",
-      "qualifierString": "with leaves",
-      "isConvertibleUnit": false
-    },
-    {
-      "name": "Onions",
-      "measurement": 2,
-      "measurementUnit": "medium",
-      "qualifierString": null,
-      "isConvertibleUnit": false
-    },
-    {
-      "name": "Salt",
-      "measurement": 2.5,
-      "measurementUnit": "teaspoons",
-      "qualifierString": null,
-      "isConvertibleUnit": true
-    },
-    {
-      "name": "Instant chicken bouillon granules",
-      "measurement": 2,
-      "measurementUnit": "teaspoons",
-      "qualifierString": null,
-      "isConvertibleUnit": true
-    },
-    {
-      "name": "Dried dill weed",
-      "measurement": 0.25,
-      "measurementUnit": "teaspoons",
-      "qualifierString": null,
-      "isConvertibleUnit": true
-    },
-    {
-      "name": "Pepper",
-      "measurement": 0.25,
-      "measurementUnit": "teaspoons",
-      "qualifierString": null,
-      "isConvertibleUnit": true
-    },
-    {
-      "name": "Milk",
-      "measurement": 2,
-      "measurementUnit": "cups",
-      "qualifierString": null,
-      "isConvertibleUnit": true
-    },
-    {
-      "name": "Butter",
-      "measurement": 0.25,
-      "measurementUnit": "cups",
-      "qualifierString": "or margarine",
-      "isConvertibleUnit": true
-    },
-    {
-      "name": "Water",
-      "measurement": 4,
-      "measurementUnit": "cups",
-      "qualifierString": null,
-      "isConvertibleUnit": true
+      "subHeading": null,
+      "items": [
+        {
+          "name": "Carrots",
+          "measurement": 1,
+          "measurementUnit": "pounds",
+          "qualifierString": "medium sized",
+          "isConvertibleUnit": true
+        },
+        {
+          "name": "Potatoes",
+          "measurement": 3,
+          "measurementUnit": "medium",
+          "qualifierString": "peeled",
+          "isConvertibleUnit": false
+        },
+        {
+          "name": "Celery",
+          "measurement": 3,
+          "measurementUnit": "stalks",
+          "qualifierString": "with leaves",
+          "isConvertibleUnit": false
+        },
+        {
+          "name": "Onions",
+          "measurement": 2,
+          "measurementUnit": "medium",
+          "qualifierString": null,
+          "isConvertibleUnit": false
+        },
+        {
+          "name": "Salt",
+          "measurement": 2.5,
+          "measurementUnit": "teaspoons",
+          "qualifierString": null,
+          "isConvertibleUnit": true
+        },
+        {
+          "name": "Instant chicken bouillon granules",
+          "measurement": 2,
+          "measurementUnit": "teaspoons",
+          "qualifierString": null,
+          "isConvertibleUnit": true
+        },
+        {
+          "name": "Dried dill weed",
+          "measurement": 0.25,
+          "measurementUnit": "teaspoons",
+          "qualifierString": null,
+          "isConvertibleUnit": true
+        },
+        {
+          "name": "Pepper",
+          "measurement": 0.25,
+          "measurementUnit": "teaspoons",
+          "qualifierString": null,
+          "isConvertibleUnit": true
+        },
+        {
+          "name": "Milk",
+          "measurement": 2,
+          "measurementUnit": "cups",
+          "qualifierString": null,
+          "isConvertibleUnit": true
+        },
+        {
+          "name": "Butter",
+          "measurement": 0.25,
+          "measurementUnit": "cups",
+          "qualifierString": "or margarine",
+          "isConvertibleUnit": true
+        },
+        {
+          "name": "Water",
+          "measurement": 4,
+          "measurementUnit": "cups",
+          "qualifierString": null,
+          "isConvertibleUnit": true
+        }
+      ]
     }
   ],
   "directions": [
