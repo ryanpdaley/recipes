@@ -1,5 +1,9 @@
 import { VerticalStack, Text } from "@shopify/polaris";
-import { RecipeIngredientsProps } from "../../../../types";
+import {
+  RecipeIngredientsProps,
+  IngredientSectionProps,
+  IngredientItem,
+} from "../../../../types";
 import { FRACTION_DICTIONARY } from "../../../../constants";
 
 const convertDecimals = (measurement: number): string => {
@@ -14,11 +18,11 @@ const convertDecimals = (measurement: number): string => {
   );
 };
 
-const RecipeIngredients = ({
-  recipeIngredients,
+const IngredientsSection = ({
+  ingredientSection,
   checkedItems,
   setCheckedItems,
-}: RecipeIngredientsProps) => {
+}: IngredientSectionProps) => {
   const handleChange = (event: { target: { value: any; checked: any } }) => {
     const value = event.target.value;
     const isChecked = event.target.checked;
@@ -31,11 +35,32 @@ const RecipeIngredients = ({
     }
   };
 
+  const parseItem = (item: IngredientItem) => {
+    let parsedItem = { rowItem: "", label: "" };
+
+    const measurementString =
+      item.measurement !== null ? convertDecimals(item.measurement) : "";
+
+    const measurementUnit =
+      item.measurementUnit !== null ? item.measurementUnit : "";
+
+    const qualifierString =
+      item.qualifierString !== null ? ` (${item.qualifierString})` : "";
+
+    parsedItem[
+      "rowItem"
+    ] = `${measurementString} ${measurementUnit} ${item.name}`;
+    parsedItem["label"] = `${parsedItem["rowItem"]} ${qualifierString}`;
+    return parsedItem;
+  };
+
   return (
-    <VerticalStack gap="1">
-      <Text variant="headingMd" as="h6">
-        Ingredients:
-      </Text>
+    <>
+      {ingredientSection.subHeading && (
+        <Text variant="headingSm" as="h6">
+          {ingredientSection.subHeading}
+        </Text>
+      )}
       <table>
         <thead>
           <tr>
@@ -44,15 +69,8 @@ const RecipeIngredients = ({
           </tr>
         </thead>
         <tbody>
-          {recipeIngredients.map((ingredient) => {
-            const qualifierString =
-              ingredient.qualifierString !== null
-                ? ` (${ingredient.qualifierString})`
-                : "";
-            const rowItem = `${convertDecimals(ingredient.measurement)} ${
-              ingredient.measurementUnit
-            } ${ingredient.name}`;
-            const label = `${rowItem} ${qualifierString}`;
+          {ingredientSection.items.map((ingredient) => {
+            const { label, rowItem } = parseItem(ingredient);
             return (
               <tr key={label}>
                 <td className="recipe-body-ingredient-check">
@@ -70,6 +88,30 @@ const RecipeIngredients = ({
           })}
         </tbody>
       </table>
+    </>
+  );
+};
+
+const RecipeIngredients = ({
+  recipeIngredients,
+  checkedItems,
+  setCheckedItems,
+}: RecipeIngredientsProps) => {
+  return (
+    <VerticalStack gap="1">
+      <Text variant="headingMd" as="h6">
+        Ingredients:
+      </Text>
+      {recipeIngredients.map((ingredientSection, index) => {
+        return (
+          <IngredientsSection
+            ingredientSection={ingredientSection}
+            checkedItems={checkedItems}
+            setCheckedItems={setCheckedItems}
+            key={index}
+          />
+        );
+      })}
     </VerticalStack>
   );
 };
