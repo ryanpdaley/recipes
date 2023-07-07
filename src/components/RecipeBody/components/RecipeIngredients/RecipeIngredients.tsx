@@ -4,19 +4,7 @@ import {
   IngredientSectionProps,
   IngredientItem,
 } from "../../../../types";
-import { FRACTION_DICTIONARY } from "../../../../constants";
-
-const convertDecimals = (measurement: number): string => {
-  const decimal = measurement % 1;
-  const wholeNumber = Math.trunc(measurement);
-  if (decimal === 0 || !(decimal in FRACTION_DICTIONARY))
-    return measurement.toString();
-
-  return (
-    (wholeNumber > 0 ? wholeNumber + " " : "") +
-    String.fromCharCode(FRACTION_DICTIONARY[decimal])
-  );
-};
+import { convertDecimals } from "../../../../lib/formatters";
 
 const IngredientsSection = ({
   ingredientSection,

@@ -1,6 +1,7 @@
 import { Card, VerticalStack, HorizontalGrid, Text } from "@shopify/polaris";
 
 import type { RecipeInfoProps } from "../../types";
+import { convertDecimals } from "../../lib/formatters";
 
 const Description = ({ recipeInfo }: RecipeInfoProps) => {
   return (
@@ -25,14 +26,18 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
     recipeInfo.cookTime !== null ? (
       <p>
         <strong>Cook Time: </strong>
-        {`${recipeInfo.cookTime.value} ${recipeInfo.cookTime.unit}`}
+        {`${convertDecimals(recipeInfo.cookTime.value)} ${
+          recipeInfo.cookTime.unit
+        }`}
       </p>
     ) : null;
   const prepTimeBlock =
     recipeInfo.prepTime !== null ? (
       <p>
         <strong>Prep Time: </strong>
-        {`${recipeInfo.prepTime.value} ${recipeInfo.prepTime.unit}`}
+        {`${convertDecimals(recipeInfo.prepTime.value)} ${
+          recipeInfo.prepTime.unit
+        }`}
       </p>
     ) : null;
   const blockCount =
