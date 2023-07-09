@@ -97,7 +97,7 @@
       "items": [
         {
           "name": "Icing sugar",
-          "measurement": 1.75,
+          "measurement": [1.5, 2],
           "measurementUnit": "cups",
           "qualifierString": null,
           "isConvertibleUnit": true
@@ -111,7 +111,7 @@
         },
         {
           "name": "Cocoa",
-          "measurement": 3,
+          "measurement": [2, 4],
           "measurementUnit": "tablespoons",
           "qualifierString": null,
           "isConvertibleUnit": true
@@ -128,7 +128,8 @@
           "measurement": null,
           "measurementUnit": null,
           "qualifierString": null,
-          "isConvertibleUnit": false
+          "isConvertibleUnit": false,
+          "isOptional": true
         }
       ]
     }

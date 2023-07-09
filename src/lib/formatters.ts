@@ -7,7 +7,7 @@ export const convertDecimals = (measurement: number): string => {
     return measurement.toString();
 
   return (
-    (wholeNumber > 0 ? wholeNumber + " " : "") +
+    (wholeNumber > 0 ? wholeNumber : "") +
     String.fromCharCode(FRACTION_DICTIONARY[decimal])
   );
 };

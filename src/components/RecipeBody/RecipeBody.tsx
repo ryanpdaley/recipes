@@ -6,7 +6,7 @@ import RecipeDirections from "./components/RecipeDirections/RecipeDirections";
 const RecipeBody = ({ recipe, checkedItems, setCheckedItems }: RecipeProps) => {
   return (
     <div className="recipe-body">
-      <HorizontalGrid gap="4" columns={["oneThird", "twoThirds"]}>
+      <HorizontalGrid gap="2" columns={["oneThird", "twoThirds"]}>
         <RecipeIngredients
           recipeIngredients={recipe.ingredients}
           checkedItems={checkedItems}

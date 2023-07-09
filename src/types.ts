@@ -18,12 +18,17 @@ interface IngredientSection {
   items: Ingredient[];
 }
 
+export interface Measurement {
+  measurement: null | number[] | number;
+}
+
 interface Ingredient {
   name: string;
-  measurement: null | number;
+  measurement: null | number[] | number;
   measurementUnit: null | string;
   qualifierString: null | string;
   isConvertibleUnit: boolean;
+  isOptional?: boolean;
 }
 
 export interface fractionMap {

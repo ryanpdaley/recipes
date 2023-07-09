@@ -7,12 +7,12 @@ import RecipeHead from "../RecipeHead/RecipeHead";
 import RecipeBody from "../RecipeBody/RecipeBody";
 
 function Recipe() {
+  const recipe = sampleRecipe;
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
   const [shoppingListState, setShoppingListState] = useState(false);
   useEffect(() => {
     setShoppingListState(checkedItems.length === 0);
-  }, [checkedItems]);
-  const recipe = sampleRecipe;
+  }, [checkedItems, recipe]);
 
   const logList = () => {
     alert(checkedItems);

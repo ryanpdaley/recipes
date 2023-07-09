@@ -52,22 +52,25 @@
           "name": "cilantro",
           "measurement": null,
           "measurementUnit": null,
-          "qualifierString": "optional",
-          "isConvertibleUnit": false
+          "qualifierString": null,
+          "isConvertibleUnit": false,
+          "isOptional": true
         },
         {
           "name": "lime wedges",
           "measurement": null,
           "measurementUnit": null,
-          "qualifierString": "optional",
-          "isConvertibleUnit": false
+          "qualifierString": null,
+          "isConvertibleUnit": false,
+          "isOptional": true
         },
         {
           "name": "rice",
           "measurement": null,
           "measurementUnit": null,
-          "qualifierString": "optional",
-          "isConvertibleUnit": false
+          "qualifierString": null,
+          "isConvertibleUnit": false,
+          "isOptional": true
         }
       ]
     },

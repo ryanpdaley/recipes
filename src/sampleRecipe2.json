@@ -56,10 +56,10 @@
           "isConvertibleUnit": true
         },
         {
-          "name": "Eggs",
+          "name": "Large Eggs",
           "measurement": 2,
           "measurementUnit": null,
-          "qualifierString": "large; beaten",
+          "qualifierString": "beaten",
           "isConvertibleUnit": false
         },
         {

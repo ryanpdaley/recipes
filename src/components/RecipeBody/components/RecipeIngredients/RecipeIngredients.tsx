@@ -23,11 +23,26 @@ const IngredientsSection = ({
     }
   };
 
+  const getMeasurementString = (
+    measurement: null | number | number[]
+  ): string => {
+    if (measurement == null || measurement === undefined) {
+      return "";
+    } else {
+      if (Array.isArray(measurement) && measurement.length === 2) {
+        return `${convertDecimals(measurement[0])}-${convertDecimals(
+          measurement[1]
+        )}`;
+      } else if (typeof measurement === "number") {
+        return `${convertDecimals(measurement)}`;
+      }
+    }
+    return "";
+  };
   const parseItem = (item: IngredientItem) => {
     let parsedItem = { rowItem: "", label: "" };
-
-    const measurementString =
-      item.measurement !== null ? convertDecimals(item.measurement) : "";
+    const optionalString = item.isOptional ? "[optional]" : "";
+    const measurementString = getMeasurementString(item.measurement);
 
     const measurementUnit =
       item.measurementUnit !== null ? ` ${item.measurementUnit} ` : " ";
@@ -38,7 +53,9 @@ const IngredientsSection = ({
     parsedItem[
       "rowItem"
     ] = `${measurementString}${measurementUnit}${item.name}`;
-    parsedItem["label"] = `${parsedItem["rowItem"]} ${qualifierString}`;
+    parsedItem[
+      "label"
+    ] = `${optionalString}${parsedItem["rowItem"]} ${qualifierString}`;
     return parsedItem;
   };
 
