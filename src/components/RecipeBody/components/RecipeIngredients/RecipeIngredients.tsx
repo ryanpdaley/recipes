@@ -1,4 +1,4 @@
-import { VerticalStack, Text } from "@shopify/polaris";
+import { VerticalStack, Text, Tooltip } from "@shopify/polaris";
 import {
   RecipeIngredientsProps,
   IngredientSectionProps,
@@ -50,24 +50,21 @@ const IngredientsSection = ({
         </Text>
       )}
       <table>
-        <thead>
-          <tr>
-            <th>Need?</th>
-            <th>Item</th>
-          </tr>
-        </thead>
         <tbody>
           {ingredientSection.items.map((ingredient) => {
             const { label, rowItem } = parseItem(ingredient);
             return (
               <tr key={label}>
                 <td className="recipe-body-ingredient-check">
-                  <input
-                    type="checkbox"
-                    value={rowItem}
-                    onChange={handleChange}
-                  />
+                  <Tooltip content="Select to add to Shopping List">
+                    <input
+                      type="checkbox"
+                      value={rowItem}
+                      onChange={handleChange}
+                    />
+                  </Tooltip>
                 </td>
+
                 <td className="recipe-body-ingredient-label">
                   <label>{label}</label>
                 </td>
