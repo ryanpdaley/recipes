@@ -11,17 +11,26 @@ import ShoppingList from "../PrintableRecipe/ComponentToPrint";
 function Recipe() {
   const recipe = sampleRecipe;
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
-  const componentRef = useRef<HTMLDivElement>(null);
+  const componentRefRecipe = useRef<HTMLDivElement>(null);
+  const componentRefShoppingList = useRef<HTMLDivElement>(null);
   const [shoppingListState, setShoppingListState] = useState(false);
   useEffect(() => {
     setShoppingListState(checkedItems.length === 0);
   }, [checkedItems, recipe]);
 
-  const reactToPrintContent = useCallback(() => {
-    return componentRef.current;
+  const reactToPrintContentRecipe = useCallback(() => {
+    return componentRefRecipe.current;
   }, []);
 
-  const reactToPrintTrigger = useCallback(() => {
+  const reactToPrintContentShoppingList = useCallback(() => {
+    return componentRefShoppingList.current;
+  }, []);
+
+  const reactToPrintTriggerRecipe = useCallback(() => {
+    return <Button outline>Print Recipe</Button>;
+  }, []);
+
+  const reactToPrintTriggerShoppingList = useCallback(() => {
     return (
       <Button disabled={shoppingListState} outline>
         Print Shopping List
@@ -36,23 +45,30 @@ function Recipe() {
           backAction={{ content: "Back", url: "#" }}
           title={recipe.info.title}
         >
-          <Card>
-            <RecipeHead recipeInfo={recipe.info} />
-            <ReactToPrint
-              content={reactToPrintContent}
-              documentTitle="AwesomeFileName"
-              trigger={reactToPrintTrigger}
-            />
-            <RecipeBody
-              recipe={recipe}
-              checkedItems={checkedItems}
-              setCheckedItems={setCheckedItems}
-            />
-          </Card>
+          <div ref={componentRefRecipe}>
+            <Card>
+              <RecipeHead recipeInfo={recipe.info} />
+              <ReactToPrint
+                content={reactToPrintContentRecipe}
+                documentTitle="AwesomeFileName"
+                trigger={reactToPrintTriggerRecipe}
+              />
+              <ReactToPrint
+                content={reactToPrintContentShoppingList}
+                documentTitle="AwesomeFileName"
+                trigger={reactToPrintTriggerShoppingList}
+              />
+              <RecipeBody
+                recipe={recipe}
+                checkedItems={checkedItems}
+                setCheckedItems={setCheckedItems}
+              />
+            </Card>
+          </div>
         </Page>
       </AppProvider>
       <div style={{ display: "none" }}>
-        <div ref={componentRef}>
+        <div ref={componentRefShoppingList}>
           <ShoppingList recipe={recipe} ingredients={checkedItems} />
         </div>
       </div>
