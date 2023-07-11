@@ -18,3 +18,8 @@
 #recipe-head-info-sourceLabel {
   padding-right: var(--p-space-1);
 }
+
+.shopping-list-container {
+  width: 80%;
+  margin: var(--p-space-8) auto;
+}
