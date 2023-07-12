@@ -1,8 +1,16 @@
 import "./Recipe.css";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Page, AppProvider, Card, Button } from "@shopify/polaris";
+import {
+  Page,
+  AppProvider,
+  Card,
+  Button,
+  Text,
+  VerticalStack,
+  HorizontalStack,
+} from "@shopify/polaris";
 import translations from "./translations/en.json";
-import sampleRecipe from "../../sampleRecipe5.json";
+import sampleRecipe from "../../sampleRecipe.json";
 import RecipeHead from "../RecipeHead/RecipeHead";
 import RecipeBody from "../RecipeBody/RecipeBody";
 import ReactToPrint from "react-to-print";
@@ -38,31 +46,48 @@ function Recipe() {
     );
   }, [shoppingListState]);
 
+  const title = recipe.info.title;
+
   return (
     <>
       <AppProvider i18n={translations}>
-        <Page
-          backAction={{ content: "Back", url: "#" }}
-          title={recipe.info.title}
-        >
+        <Page backAction={{ content: "Back", url: "#" }}>
           <div ref={componentRefRecipe}>
+            <div className="recipe-title">
+              <Text variant="heading3xl" as="h2">
+                {title}
+              </Text>
+            </div>
             <Card>
-              <RecipeHead recipeInfo={recipe.info} />
-              <ReactToPrint
-                content={reactToPrintContentRecipe}
-                documentTitle="AwesomeFileName"
-                trigger={reactToPrintTriggerRecipe}
-              />
-              <ReactToPrint
-                content={reactToPrintContentShoppingList}
-                documentTitle="AwesomeFileName"
-                trigger={reactToPrintTriggerShoppingList}
-              />
-              <RecipeBody
-                recipe={recipe}
-                checkedItems={checkedItems}
-                setCheckedItems={setCheckedItems}
-              />
+              <VerticalStack>
+                <RecipeHead recipeInfo={recipe.info} />
+                <div className="recipe-print-container">
+                  <HorizontalStack>
+                    <div className="recipe-print-button">
+                      <ReactToPrint
+                        content={reactToPrintContentRecipe}
+                        documentTitle={title.replace(/\s/g, "")}
+                        trigger={reactToPrintTriggerRecipe}
+                      />
+                    </div>
+                    <div className="recipe-print-button">
+                      <ReactToPrint
+                        content={reactToPrintContentShoppingList}
+                        documentTitle={`${title.replace(
+                          /\s/g,
+                          ""
+                        )}-ShoppingList`}
+                        trigger={reactToPrintTriggerShoppingList}
+                      />
+                    </div>
+                  </HorizontalStack>
+                </div>
+                <RecipeBody
+                  recipe={recipe}
+                  checkedItems={checkedItems}
+                  setCheckedItems={setCheckedItems}
+                />
+              </VerticalStack>
             </Card>
           </div>
         </Page>

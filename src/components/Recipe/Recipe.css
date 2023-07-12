@@ -1,8 +1,21 @@
 .recipe-body {
-  padding: var(--p-space-5) var(--p-space-8);
+  padding: var(--p-space-4) var(--p-space-8);
 }
 .recipe-data {
   text-align: center;
+}
+
+.recipe-title {
+  padding: var(--p-space-4) var(--p-space-8);
+}
+
+.recipe-print-container {
+  align-self: end;
+  padding-top: var(--p-space-4);
+}
+
+.recipe-print-button {
+  padding-left: var(--p-space-2);
 }
 
 .recipe-body-ingredient-check {
@@ -22,4 +35,10 @@
 .shopping-list-container {
   width: 80%;
   margin: var(--p-space-8) auto;
+}
+
+@media print {
+  .recipe-print-container {
+    display: none;
+  }
 }
