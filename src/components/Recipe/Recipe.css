@@ -9,6 +9,11 @@
   padding: var(--p-space-4) var(--p-space-8);
 }
 
+.recipe-description {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .recipe-print-container {
   align-self: end;
   padding-top: var(--p-space-4);
