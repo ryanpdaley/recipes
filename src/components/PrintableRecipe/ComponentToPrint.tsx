@@ -2,7 +2,7 @@ import { AppProvider, Page, Text } from "@shopify/polaris";
 import { Recipe } from "../../types";
 import translations from "../../components/Recipe/translations/en.json";
 import RecipeHead from "../RecipeHead/RecipeHead";
-import "../Recipe/Recipe.css";
+import "../../styles.css";
 
 type ShoppingListProps = {
   recipe: Recipe;

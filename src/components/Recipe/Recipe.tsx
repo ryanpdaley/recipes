@@ -1,4 +1,4 @@
-import "./Recipe.css";
+import "./../../styles.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   Page,
