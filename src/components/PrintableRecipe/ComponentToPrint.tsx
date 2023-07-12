@@ -1,4 +1,4 @@
-import { AppProvider, Page, Text } from "@shopify/polaris";
+import { AppProvider, Checkbox, Page, Text } from "@shopify/polaris";
 import { Recipe } from "../../types";
 import translations from "../../components/Recipe/translations/en.json";
 import RecipeHead from "../RecipeHead/RecipeHead";
@@ -15,15 +15,13 @@ const ShoppingList = ({ recipe, ingredients }: ShoppingListProps) => {
       <Page title={recipe.info.title}>
         <RecipeHead recipeInfo={recipe.info} />
         <div className="shopping-list-container">
-          <Text variant="headingMd" as="h4">
+          <Text variant="headingMd" as="h2">
             Shopping List:
           </Text>
           {ingredients.map((ingredient, index) => {
             return (
               <div key={index} className="shopping-list-item">
-                <Text variant="headingSm" as="p">
-                  [ ] {ingredient}
-                </Text>
+                <Checkbox label={ingredient} checked={false} />
               </div>
             );
           })}
