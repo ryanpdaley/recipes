@@ -9,6 +9,7 @@ import {
   VerticalStack,
   HorizontalStack,
 } from "@shopify/polaris";
+import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
 import translations from "./translations/en.json";
 import sampleRecipe from "../../sampleRecipe.json";
 import RecipeHead from "../RecipeHead/RecipeHead";
@@ -35,12 +36,16 @@ function Recipe() {
   }, []);
 
   const reactToPrintTriggerRecipe = useCallback(() => {
-    return <Button outline>Print Recipe</Button>;
+    return (
+      <Button icon={PrintMajor} outline>
+        Print Recipe
+      </Button>
+    );
   }, []);
 
   const reactToPrintTriggerShoppingList = useCallback(() => {
     return (
-      <Button disabled={shoppingListState} outline>
+      <Button disabled={shoppingListState} icon={CartMajor} outline>
         Print Shopping List
       </Button>
     );
