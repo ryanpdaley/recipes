@@ -1,0 +1,49 @@
+.recipe-body {
+  padding: var(--p-space-4) var(--p-space-8);
+}
+.recipe-data {
+  text-align: center;
+}
+
+.recipe-title {
+  padding: var(--p-space-4) var(--p-space-8);
+}
+
+.recipe-description {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.recipe-print-container {
+  align-self: end;
+  padding-top: var(--p-space-4);
+}
+
+.recipe-print-button {
+  padding-left: var(--p-space-2);
+}
+
+.recipe-body-ingredient-check {
+  margin-right: var(--p-space-2);
+  vertical-align: top;
+  text-align: center;
+}
+
+.recipe-body-ingredient-label {
+  padding: 0 var(--p-space-4);
+}
+
+#recipe-head-info-sourceLabel {
+  padding-right: var(--p-space-1);
+}
+
+.shopping-list-container {
+  width: 80%;
+  margin: var(--p-space-8) auto;
+}
+
+@media print {
+  .recipe-print-container {
+    display: none;
+  }
+}

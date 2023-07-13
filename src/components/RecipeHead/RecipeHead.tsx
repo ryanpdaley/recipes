@@ -16,7 +16,9 @@ const Description = ({ recipeInfo }: RecipeInfoProps) => {
       <Text variant="headingMd" as="h6">
         Description:
       </Text>
-      <p>{recipeInfo.description}</p>
+      <div className="recipe-description">
+        <p>{recipeInfo.description}</p>
+      </div>
     </div>
   );
 };
