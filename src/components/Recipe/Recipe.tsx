@@ -12,10 +12,10 @@ import {
 import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
 import translations from "./translations/en.json";
 import sampleRecipe from "../../sampleRecipe.json";
-import RecipeHead from "../RecipeHead/RecipeHead";
-import RecipeBody from "../RecipeBody/RecipeBody";
+import RecipeHead from "./components/RecipeHead/RecipeHead";
+import RecipeBody from "./components/RecipeBody/RecipeBody";
 import ReactToPrint from "react-to-print";
-import ShoppingList from "../PrintableRecipe/ComponentToPrint";
+import ShoppingList from "./components/PrintableRecipe/ComponentToPrint";
 
 function Recipe() {
   const recipe = sampleRecipe;

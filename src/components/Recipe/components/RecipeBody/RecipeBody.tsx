@@ -1,5 +1,5 @@
 import { HorizontalGrid } from "@shopify/polaris";
-import { RecipeProps } from "../../types";
+import { RecipeProps } from "../../../../types";
 import RecipeIngredients from "./components/RecipeIngredients/RecipeIngredients";
 import RecipeDirections from "./components/RecipeDirections/RecipeDirections";
 

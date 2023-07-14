@@ -7,8 +7,8 @@ import {
   HorizontalStack,
 } from "@shopify/polaris";
 
-import type { RecipeInfoProps } from "../../types";
-import { convertDecimals } from "../../lib/formatters";
+import type { RecipeInfoProps } from "../../../../types";
+import { convertDecimals } from "../../../../lib/formatters";
 
 const Description = ({ recipeInfo }: RecipeInfoProps) => {
   return (

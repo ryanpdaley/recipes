@@ -3,8 +3,8 @@ import {
   RecipeIngredientsProps,
   IngredientSectionProps,
   IngredientItem,
-} from "../../../../types";
-import { convertDecimals } from "../../../../lib/formatters";
+} from "../../../../../../types";
+import { convertDecimals } from "../../../../../../lib/formatters";
 
 const IngredientsSection = ({
   ingredientSection,
