@@ -1,5 +1,5 @@
 import { VerticalStack, Text, List } from "@shopify/polaris";
-import type { recipeDirectionsProps } from "../../../../types";
+import type { recipeDirectionsProps } from "../../../../../../types";
 
 const RecipeDirections = ({ recipeDirections }: recipeDirectionsProps) => {
   return (

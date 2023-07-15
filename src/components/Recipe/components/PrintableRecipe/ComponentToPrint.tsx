@@ -1,8 +1,8 @@
 import { AppProvider, Checkbox, Page, Text } from "@shopify/polaris";
-import { Recipe } from "../../types";
-import translations from "../../components/Recipe/translations/en.json";
+import { Recipe } from "../../../../types";
+import translations from "../../../../translations/en.json";
 import RecipeHead from "../RecipeHead/RecipeHead";
-import "../../styles.css";
+import "../../../../styles.css";
 
 type ShoppingListProps = {
   recipe: Recipe;

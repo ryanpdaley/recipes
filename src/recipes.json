@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Garden Gold Soup",
+    "src": "sampleRecipe.json"
+  },
+  {
+    "title": "Wacky Cake",
+    "src": "sampleRecipe1.json"
+  },
+  {
+    "title": "Banana Banana Bread",
+    "src": "sampleRecipe2.json"
+  },
+  {
+    "title": "Sheet Pan Cashew Chicken",
+    "src": "sampleRecipe3.json"
+  },
+  {
+    "title": "Brown Rice Salad",
+    "src": "sampleRecipe4.json"
+  },
+  {
+    "title": "Shakshuka",
+    "src": "sampleRecipe5.json"
+  }
+]

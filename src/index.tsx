@@ -2,15 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Recipe from "./components/Recipe/Recipe";
 import "@shopify/polaris/build/esm/styles.css";
+import Recipes from "./Recipes";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Recipe />
+    <Recipes />
   </React.StrictMode>
 );
 
