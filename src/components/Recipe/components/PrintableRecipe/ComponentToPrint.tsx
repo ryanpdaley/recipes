@@ -1,6 +1,6 @@
 import { AppProvider, Checkbox, Page, Text } from "@shopify/polaris";
 import { Recipe } from "../../../../types";
-import translations from "../../translations/en.json";
+import translations from "../../../../translations/en.json";
 import RecipeHead from "../RecipeHead/RecipeHead";
 import "../../../../styles.css";
 

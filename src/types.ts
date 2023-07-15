@@ -35,6 +35,11 @@ export interface fractionMap {
   [key: number]: number;
 }
 
+export interface SelectedRecipe {
+  title: string;
+  src: string;
+}
+
 export type recipeDirectionsProps = { recipeDirections: string[] };
 
 export type RecipeIngredientsProps = {
@@ -47,6 +52,10 @@ export type RecipeInfoProps = { recipeInfo: RecipeInfo };
 
 export type RecipeProps = {
   recipe: Recipe;
+};
+
+export type RecipeBodyProps = {
+  recipe: Recipe;
   checkedItems: string[];
   setCheckedItems: (val: string[]) => void;
 };
@@ -57,4 +66,16 @@ export type IngredientSectionProps = {
   ingredientSection: IngredientSection;
   checkedItems: string[];
   setCheckedItems: (val: string[]) => void;
+};
+
+export type RecipeListProps = {
+  setSelectedRecipe: (selectedRecipe: SelectedRecipe) => void;
+  recipeInfo: SelectedRecipe[];
+};
+
+export type SelectedRecipeProps = {
+  selectedRecipe: {
+    title: string;
+    src: string;
+  };
 };

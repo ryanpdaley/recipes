@@ -1,9 +1,13 @@
 import { HorizontalGrid } from "@shopify/polaris";
-import { RecipeProps } from "../../../../types";
+import { RecipeBodyProps } from "../../../../types";
 import RecipeIngredients from "./components/RecipeIngredients/RecipeIngredients";
 import RecipeDirections from "./components/RecipeDirections/RecipeDirections";
 
-const RecipeBody = ({ recipe, checkedItems, setCheckedItems }: RecipeProps) => {
+const RecipeBody = ({
+  recipe,
+  checkedItems,
+  setCheckedItems,
+}: RecipeBodyProps) => {
   return (
     <div className="recipe-body">
       <HorizontalGrid gap="2" columns={["oneThird", "twoThirds"]}>
