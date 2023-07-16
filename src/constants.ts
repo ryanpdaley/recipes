@@ -17,3 +17,5 @@ export const FRACTION_DICTIONARY: fractionMap = {
   0.625: 8541,
   0.875: 8542,
 };
+
+export const MAX_MOBILE_WIDTH_PX = 1024;
