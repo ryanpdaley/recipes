@@ -9,14 +9,22 @@ import {
 } from "@shopify/polaris";
 import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
 import RecipeHead from "./components/RecipeHead/RecipeHead";
-import RecipeBody from "./components/RecipeBody/RecipeBody";
+import {
+  MobileRecipeBodyComponent,
+  RecipeBodyComponent,
+} from "./components/RecipeBody/RecipeBody";
 import ReactToPrint from "react-to-print";
 import ShoppingList from "./components/PrintableRecipe/ComponentToPrint";
 import { SelectedRecipeProps } from "../../types";
+import { useMediaQuery } from "react-responsive";
+import { MAX_MOBILE_WIDTH_PX } from "../../constants";
 
 function Recipe({ selectedRecipe }: SelectedRecipeProps) {
   const [recipe, setRecipe] = useState(null);
   const title = selectedRecipe.title;
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width:${MAX_MOBILE_WIDTH_PX}px)`,
+  });
 
   const getRecipe = async (file: string) => {
     const localPath = `../../data/${file}`;
@@ -71,42 +79,98 @@ function Recipe({ selectedRecipe }: SelectedRecipeProps) {
 
   return (
     <>
-      <div ref={componentRefRecipe}>
-        <div className="recipe-title">
-          <Text variant="heading3xl" as="h2">
-            {title}
-          </Text>
-        </div>
-        <Card>
+      <div className="recipe-title">
+        <Text variant="heading3xl" as="h2">
+          {title}
+        </Text>
+      </div>
+      <Card>
+        {recipe !== null && (
+          <VerticalStack>
+            <RecipeHead recipeInfo={recipe["info"]} />
+            <div className="recipe-print-container">
+              <HorizontalStack>
+                <div className="recipe-print-button">
+                  <ReactToPrint
+                    content={reactToPrintContentRecipe}
+                    documentTitle={title.replace(/\s/g, "")}
+                    trigger={reactToPrintTriggerRecipe}
+                  />
+                </div>
+                <div className="recipe-print-button">
+                  <ReactToPrint
+                    content={reactToPrintContentShoppingList}
+                    documentTitle={`${title.replace(/\s/g, "")}-ShoppingList`}
+                    trigger={reactToPrintTriggerShoppingList}
+                  />
+                </div>
+              </HorizontalStack>
+            </div>
+            <div className="recipe-body">
+              {isTabletOrMobile ? (
+                <MobileRecipeBodyComponent
+                  recipe={recipe}
+                  checkedItems={checkedItems}
+                  setCheckedItems={setCheckedItems}
+                />
+              ) : (
+                <RecipeBodyComponent
+                  recipe={recipe}
+                  checkedItems={checkedItems}
+                  setCheckedItems={setCheckedItems}
+                />
+              )}
+            </div>
+          </VerticalStack>
+        )}
+      </Card>
+      <div style={{ display: "none" }}>
+        <div ref={componentRefRecipe}>
           {recipe !== null && (
-            <VerticalStack>
-              <RecipeHead recipeInfo={recipe["info"]} />
-              <div className="recipe-print-container">
-                <HorizontalStack>
-                  <div className="recipe-print-button">
-                    <ReactToPrint
-                      content={reactToPrintContentRecipe}
-                      documentTitle={title.replace(/\s/g, "")}
-                      trigger={reactToPrintTriggerRecipe}
-                    />
-                  </div>
-                  <div className="recipe-print-button">
-                    <ReactToPrint
-                      content={reactToPrintContentShoppingList}
-                      documentTitle={`${title.replace(/\s/g, "")}-ShoppingList`}
-                      trigger={reactToPrintTriggerShoppingList}
-                    />
-                  </div>
-                </HorizontalStack>
+            <>
+              <div className="recipe-title">
+                <Text variant="heading3xl" as="h2">
+                  {title}
+                </Text>
               </div>
-              <RecipeBody
-                recipe={recipe}
-                checkedItems={checkedItems}
-                setCheckedItems={setCheckedItems}
-              />
-            </VerticalStack>
+              <Card>
+                {recipe !== null && (
+                  <VerticalStack>
+                    <RecipeHead recipeInfo={recipe["info"]} />
+                    <div className="recipe-print-container">
+                      <HorizontalStack>
+                        <div className="recipe-print-button">
+                          <ReactToPrint
+                            content={reactToPrintContentRecipe}
+                            documentTitle={title.replace(/\s/g, "")}
+                            trigger={reactToPrintTriggerRecipe}
+                          />
+                        </div>
+                        <div className="recipe-print-button">
+                          <ReactToPrint
+                            content={reactToPrintContentShoppingList}
+                            documentTitle={`${title.replace(
+                              /\s/g,
+                              ""
+                            )}-ShoppingList`}
+                            trigger={reactToPrintTriggerShoppingList}
+                          />
+                        </div>
+                      </HorizontalStack>
+                    </div>
+                    <div className="recipe-body">
+                      <RecipeBodyComponent
+                        recipe={recipe}
+                        checkedItems={checkedItems}
+                        setCheckedItems={setCheckedItems}
+                      />
+                    </div>
+                  </VerticalStack>
+                )}
+              </Card>
+            </>
           )}
-        </Card>
+        </div>
       </div>
       <div style={{ display: "none" }}>
         <div ref={componentRefShoppingList}>
