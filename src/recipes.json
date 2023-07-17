@@ -22,5 +22,9 @@
   {
     "title": "Shakshuka",
     "src": "sampleRecipe5.json"
+  },
+  {
+    "title": "Classic Waffles",
+    "src": "sampleRecipe6.json"
   }
 ]

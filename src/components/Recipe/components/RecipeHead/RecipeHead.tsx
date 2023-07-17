@@ -33,7 +33,7 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
     ) : null;
 
   const cookTimeBlock =
-    recipeInfo.cookTime !== null ? (
+    recipeInfo.cookTime && recipeInfo.cookTime !== null ? (
       <p>
         <strong>Cook Time: </strong>
         {`${convertDecimals(recipeInfo.cookTime.value)} ${
@@ -43,7 +43,7 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
     ) : null;
 
   const prepTimeBlock =
-    recipeInfo.prepTime !== null ? (
+    recipeInfo.prepTime && recipeInfo.prepTime !== null ? (
       <p>
         <strong>Prep Time: </strong>
         {`${convertDecimals(recipeInfo.prepTime.value)} ${
