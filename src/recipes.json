@@ -26,5 +26,9 @@
   {
     "title": "Classic Waffles",
     "src": "sampleRecipe6.json"
+  },
+  {
+    "title": "One Skillet 'Egg Roll in a Bowl'",
+    "src": "sampleRecipe7.json"
   }
 ]
