@@ -95,6 +95,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+To learn TypeScript, check out the [TypeScript documentation](https://www.typescriptlang.org).
+
+To learn more about Polaris, checkout the [Shopify Polaris documentation](https://polaris.shopify.com/).
