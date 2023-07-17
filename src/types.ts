@@ -6,15 +6,15 @@ export interface Recipe {
 
 interface RecipeInfo {
   title: string;
-  makes: null | string;
-  prepTime: null | { value: number; unit: string };
-  cookTime: null | { value: number; unit: string };
-  description: null | string;
-  source: null | { label: string; url: null | string };
+  makes?: null | string;
+  prepTime?: null | { value: number; unit: string };
+  cookTime?: null | { value: number; unit: string };
+  description?: null | string;
+  source?: null | { label: string; url: null | string };
 }
 
 interface IngredientSection {
-  subHeading: null | string;
+  subHeading?: null | string;
   items: Ingredient[];
 }
 
@@ -24,10 +24,10 @@ export interface Measurement {
 
 interface Ingredient {
   name: string;
-  measurement: null | number[] | number;
-  measurementUnit: null | string;
-  qualifierString: null | string;
-  isConvertibleUnit: boolean;
+  measurement?: null | number[] | number;
+  measurementUnit?: null | string;
+  qualifierString?: null | string;
+  isConvertibleUnit?: boolean;
   isOptional?: boolean;
 }
 

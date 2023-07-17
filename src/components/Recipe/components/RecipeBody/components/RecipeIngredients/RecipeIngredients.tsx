@@ -42,7 +42,8 @@ const IngredientsSection = ({
   const parseItem = (item: IngredientItem) => {
     let parsedItem = { rowItem: "", label: "" };
     const optionalString = item.isOptional ? "[optional]" : "";
-    const measurementString = getMeasurementString(item.measurement);
+    const measurementString =
+      item && item.measurement ? getMeasurementString(item.measurement) : null;
 
     const measurementUnit =
       item.measurementUnit !== null ? ` ${item.measurementUnit} ` : " ";
