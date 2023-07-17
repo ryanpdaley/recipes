@@ -43,7 +43,7 @@ const IngredientsSection = ({
     let parsedItem = { rowItem: "", label: "" };
     const optionalString = item.isOptional ? "[optional]" : "";
     const measurementString =
-      item && item.measurement ? getMeasurementString(item.measurement) : null;
+      item && item.measurement ? getMeasurementString(item.measurement) : "";
 
     const measurementUnit =
       item.measurementUnit !== null ? ` ${item.measurementUnit} ` : " ";
