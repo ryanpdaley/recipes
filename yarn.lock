@@ -1725,23 +1725,23 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.3.2.tgz#31b9c510d8cada9683549e1dbb4284cca5001faf"
   integrity sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==
 
-"@shopify/polaris-icons@^7.4.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-7.4.0.tgz#4508aeb8ab38b6eef071ac40ca31097c700d9343"
-  integrity sha512-jKh/XV0IcLXO37C932oLnKJ+2GFwaB3ZeCo3qv8wsdvB89mLQ7VVkNAKM2ZKmVktNSGISg+F/l9IVBsmQwa9VQ==
+"@shopify/polaris-icons@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-7.7.0.tgz#32b77414b591a37c3c302e0387f6c2fa19024aee"
+  integrity sha512-87/zR0ZlVpq1JPH6j4ahFQFJToJ1ewR+9cJ8NWyp+nw9Du3k9LVP/HFViiW0rSbJVrDDCysXxLlQyvvMjdQCkQ==
 
-"@shopify/polaris-tokens@^7.5.1":
-  version "7.5.1"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-tokens/-/polaris-tokens-7.5.1.tgz#20af972c7d59f4ac5ef5a3c3c8cc28963185953f"
-  integrity sha512-FXhOdcaWN9UJu99KnvHfxrf/JNplDRxqz23jjZ1XP989CbQ14PNNwpldOxQktbly9MCuWkz1zxMv0+0kJsjcZw==
+"@shopify/polaris-tokens@^7.5.2":
+  version "7.5.2"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris-tokens/-/polaris-tokens-7.5.2.tgz#6ab5308dfdcf912e01e60b659060bd10678b7b91"
+  integrity sha512-xEpIhwqR1RHVjY4YGeZd4In8NrjE5IHunyvXtbXrZZ75ydCqP7GYIhC8JSB8OyEx9eb4R4ERRgLyhYnDLG0TYA==
 
-"@shopify/polaris@^11.7.0":
-  version "11.7.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-11.7.0.tgz#927d8babb02f28fd82badd6fe07d815f36568d97"
-  integrity sha512-Weg2B+gBYuVjU1+DPvjvYQN/sZ2m63K9Vv6LgXIx694qgogSoG69gaAbivUBxLWre0k+h0WMHmHnBVU5N8DOoQ==
+"@shopify/polaris@^11.10.2":
+  version "11.10.2"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-11.10.2.tgz#7ce0129067ebc89d8403e48cf5ef913971a616d8"
+  integrity sha512-C49Kh/krgvMfYHCy2R48g+5lg44Ua2siigHBcHwUc52sZmwOVPUh5Z3/B49MHtzCMqPvge1thxO5g+AVHHa0sw==
   dependencies:
-    "@shopify/polaris-icons" "^7.4.0"
-    "@shopify/polaris-tokens" "^7.5.1"
+    "@shopify/polaris-icons" "^7.7.0"
+    "@shopify/polaris-tokens" "^7.5.2"
     "@types/react" "^18.2.0"
     "@types/react-dom" "^18.2.0"
     "@types/react-transition-group" "^4.4.2"
