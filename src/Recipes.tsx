@@ -14,7 +14,7 @@ const Recipes = () => {
   const [view, setView] = useState("recipeListView");
   const [selectedRecipe, setSelectedRecipe] = useState(initialState);
 
-  const backView =
+  const backAction =
     view === "recipeView"
       ? ({
           content: "Back",
@@ -33,7 +33,7 @@ const Recipes = () => {
 
   return (
     <AppProvider i18n={translations}>
-      <Page title="Ryan's Recipes" backAction={backView}>
+      <Page title="Ryan's Recipes" backAction={backAction}>
         {view === "recipeListView" && (
           <RecipeList
             recipeInfo={recipeInfo}
