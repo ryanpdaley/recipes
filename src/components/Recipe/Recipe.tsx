@@ -19,8 +19,17 @@ import { SelectedRecipeProps } from "../../types";
 import { useMediaQuery } from "react-responsive";
 import { MAX_MOBILE_WIDTH_PX } from "../../constants";
 
+type RecipeViewProps = {
+  isVisible?: boolean;
+};
+
 function Recipe({ selectedRecipe }: SelectedRecipeProps) {
   const [recipe, setRecipe] = useState(null);
+  const [checkedItems, setCheckedItems] = useState<string[]>([]);
+  const [shoppingListState, setShoppingListState] = useState(false);
+  const componentRefRecipe = useRef<HTMLDivElement>(null);
+  const componentRefShoppingList = useRef<HTMLDivElement>(null);
+
   const title = selectedRecipe.title;
   const isTabletOrMobile = useMediaQuery({
     query: `(max-width:${MAX_MOBILE_WIDTH_PX}px)`,
@@ -35,6 +44,50 @@ function Recipe({ selectedRecipe }: SelectedRecipeProps) {
       return response.json();
     }
   };
+
+  const RecipeView = ({ isVisible }: RecipeViewProps) => {
+    if (recipe === null) return null;
+    else
+      return (
+        <VerticalStack>
+          <RecipeHead recipeInfo={recipe["info"]} />
+          <div className="recipe-print-container">
+            <HorizontalStack>
+              <div className="recipe-print-button">
+                <ReactToPrint
+                  content={reactToPrintContentRecipe}
+                  documentTitle={title.replace(/\s/g, "")}
+                  trigger={reactToPrintTriggerRecipe}
+                />
+              </div>
+              <div className="recipe-print-button">
+                <ReactToPrint
+                  content={reactToPrintContentShoppingList}
+                  documentTitle={`${title.replace(/\s/g, "")}-ShoppingList`}
+                  trigger={reactToPrintTriggerShoppingList}
+                />
+              </div>
+            </HorizontalStack>
+          </div>
+          <div className="recipe-body">
+            {isVisible && isTabletOrMobile ? (
+              <MobileRecipeBodyComponent
+                recipe={recipe}
+                checkedItems={checkedItems}
+                setCheckedItems={setCheckedItems}
+              />
+            ) : (
+              <RecipeBodyComponent
+                recipe={recipe}
+                checkedItems={checkedItems}
+                setCheckedItems={setCheckedItems}
+              />
+            )}
+          </div>
+        </VerticalStack>
+      );
+  };
+
   useEffect(() => {
     getRecipe(selectedRecipe.src)
       .then((res) => {
@@ -45,10 +98,6 @@ function Recipe({ selectedRecipe }: SelectedRecipeProps) {
       });
   }, [selectedRecipe.src]);
 
-  const [checkedItems, setCheckedItems] = useState<string[]>([]);
-  const componentRefRecipe = useRef<HTMLDivElement>(null);
-  const componentRefShoppingList = useRef<HTMLDivElement>(null);
-  const [shoppingListState, setShoppingListState] = useState(false);
   useEffect(() => {
     setShoppingListState(checkedItems.length === 0);
   }, [checkedItems]);
@@ -85,44 +134,7 @@ function Recipe({ selectedRecipe }: SelectedRecipeProps) {
         </Text>
       </div>
       <Card>
-        {recipe !== null && (
-          <VerticalStack>
-            <RecipeHead recipeInfo={recipe["info"]} />
-            <div className="recipe-print-container">
-              <HorizontalStack>
-                <div className="recipe-print-button">
-                  <ReactToPrint
-                    content={reactToPrintContentRecipe}
-                    documentTitle={title.replace(/\s/g, "")}
-                    trigger={reactToPrintTriggerRecipe}
-                  />
-                </div>
-                <div className="recipe-print-button">
-                  <ReactToPrint
-                    content={reactToPrintContentShoppingList}
-                    documentTitle={`${title.replace(/\s/g, "")}-ShoppingList`}
-                    trigger={reactToPrintTriggerShoppingList}
-                  />
-                </div>
-              </HorizontalStack>
-            </div>
-            <div className="recipe-body">
-              {isTabletOrMobile ? (
-                <MobileRecipeBodyComponent
-                  recipe={recipe}
-                  checkedItems={checkedItems}
-                  setCheckedItems={setCheckedItems}
-                />
-              ) : (
-                <RecipeBodyComponent
-                  recipe={recipe}
-                  checkedItems={checkedItems}
-                  setCheckedItems={setCheckedItems}
-                />
-              )}
-            </div>
-          </VerticalStack>
-        )}
+        <RecipeView isVisible />
       </Card>
       <div style={{ display: "none" }}>
         <div ref={componentRefRecipe}>
@@ -134,39 +146,7 @@ function Recipe({ selectedRecipe }: SelectedRecipeProps) {
                 </Text>
               </div>
               <Card>
-                {recipe !== null && (
-                  <VerticalStack>
-                    <RecipeHead recipeInfo={recipe["info"]} />
-                    <div className="recipe-print-container">
-                      <HorizontalStack>
-                        <div className="recipe-print-button">
-                          <ReactToPrint
-                            content={reactToPrintContentRecipe}
-                            documentTitle={title.replace(/\s/g, "")}
-                            trigger={reactToPrintTriggerRecipe}
-                          />
-                        </div>
-                        <div className="recipe-print-button">
-                          <ReactToPrint
-                            content={reactToPrintContentShoppingList}
-                            documentTitle={`${title.replace(
-                              /\s/g,
-                              ""
-                            )}-ShoppingList`}
-                            trigger={reactToPrintTriggerShoppingList}
-                          />
-                        </div>
-                      </HorizontalStack>
-                    </div>
-                    <div className="recipe-body">
-                      <RecipeBodyComponent
-                        recipe={recipe}
-                        checkedItems={checkedItems}
-                        setCheckedItems={setCheckedItems}
-                      />
-                    </div>
-                  </VerticalStack>
-                )}
+                <RecipeView />
               </Card>
             </>
           )}
