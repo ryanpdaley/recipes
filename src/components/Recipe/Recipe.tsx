@@ -23,7 +23,7 @@ type RecipeViewProps = {
   isVisible?: boolean;
 };
 
-function Recipe({ selectedRecipe }: SelectedRecipeProps) {
+const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
   const [recipe, setRecipe] = useState(null);
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
   const [shoppingListState, setShoppingListState] = useState(false);
@@ -161,6 +161,6 @@ function Recipe({ selectedRecipe }: SelectedRecipeProps) {
       </div>
     </>
   );
-}
+};
 
 export default Recipe;
