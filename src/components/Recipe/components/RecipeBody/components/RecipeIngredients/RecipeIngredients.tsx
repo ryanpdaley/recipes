@@ -71,12 +71,14 @@ const IngredientsSection = ({
         <tbody>
           {ingredientSection.items.map((ingredient) => {
             const { label, rowItem } = parseItem(ingredient);
+            const isChecked = checkedItems.includes(rowItem);
             return (
               <tr key={label}>
                 <td className="recipe-body-ingredient-check">
                   <Tooltip content="Select to add to Shopping List">
                     <input
                       type="checkbox"
+                      defaultChecked={isChecked}
                       value={rowItem}
                       onChange={handleChange}
                     />
