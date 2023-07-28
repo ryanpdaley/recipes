@@ -81,6 +81,7 @@ const IngredientsSection = ({
                       defaultChecked={isChecked}
                       value={rowItem}
                       onChange={handleChange}
+                      name={label}
                     />
                   </Tooltip>
                 </td>
