@@ -5,6 +5,7 @@ import {
   Text,
   Link,
   HorizontalStack,
+  Divider,
 } from "@shopify/polaris";
 
 import type { RecipeInfoProps } from "../../../../types";
@@ -101,6 +102,7 @@ const RecipeHead = ({ recipeInfo }: RecipeInfoProps) => {
       <Card>
         <VerticalStack gap="5">
           <Description recipeInfo={recipeInfo} />
+          <Divider />
           <MetaInfo recipeInfo={recipeInfo} />
           <SourceBlock recipeInfo={recipeInfo} />
         </VerticalStack>
