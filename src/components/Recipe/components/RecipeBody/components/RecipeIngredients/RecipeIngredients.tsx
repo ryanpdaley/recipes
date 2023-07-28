@@ -86,7 +86,7 @@ const IngredientsSection = ({
                 </td>
 
                 <td className="recipe-body-ingredient-label">
-                  <label>{label}</label>
+                  <p>{label}</p>
                 </td>
               </tr>
             );
