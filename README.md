@@ -49,8 +49,8 @@ The json recipe format is:
 - [ ] Soon:
   - [ ] Testing (React | `Jest` | `@testing-library/react`)
   - [ ] Look into using `react-helmet` for dynamic metadata / SEO
-  - [ ] Optimize components
-  - [ ] Clean up mobile / desktop / print views (currently working, but there is a lot of repetition)
+  - [x] Optimize components
+  - [x] Clean up mobile / desktop / print views (currently working, but there is a lot of repetition)
   - [ ] Hook up analytics
 - [ ] Future
   - [ ] Consume the graphQL endpoint once finished

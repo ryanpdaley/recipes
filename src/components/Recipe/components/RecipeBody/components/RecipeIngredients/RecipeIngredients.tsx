@@ -81,12 +81,13 @@ const IngredientsSection = ({
                       defaultChecked={isChecked}
                       value={rowItem}
                       onChange={handleChange}
+                      name={label}
                     />
                   </Tooltip>
                 </td>
 
                 <td className="recipe-body-ingredient-label">
-                  <label>{label}</label>
+                  <p>{label}</p>
                 </td>
               </tr>
             );
