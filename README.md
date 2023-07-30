@@ -52,6 +52,7 @@ The json recipe format is:
   - [x] Optimize components
   - [x] Clean up mobile / desktop / print views (currently working, but there is a lot of repetition)
   - [ ] Hook up analytics
+  - [ ] Update to Shopify Polaris v12
 - [ ] Future
   - [ ] Consume the graphQL endpoint once finished
   - [ ] Implement the front end to add new recipes
