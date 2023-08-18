@@ -3,10 +3,12 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import "@shopify/polaris/build/esm/styles.css";
 import Recipes from "./Recipes";
+import { initializeGA } from "./lib/ga";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+initializeGA();
 root.render(
   <React.StrictMode>
     <Recipes />

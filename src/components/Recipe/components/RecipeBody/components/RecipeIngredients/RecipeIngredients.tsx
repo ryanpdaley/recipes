@@ -5,6 +5,7 @@ import {
   IngredientItem,
 } from "../../../../../../types";
 import { convertDecimals } from "../../../../../../lib/formatters";
+import { eventGA } from "../../../../../../lib/ga";
 
 const IngredientsSection = ({
   ingredientSection,
@@ -21,6 +22,11 @@ const IngredientsSection = ({
       const filteredList = checkedItems.filter((item) => item !== value);
       setCheckedItems(filteredList);
     }
+    eventGA({
+      category: "userAction",
+      action: "ingredient_Checked",
+      label: JSON.stringify(checkedItems),
+    });
   };
 
   const getMeasurementString = (
