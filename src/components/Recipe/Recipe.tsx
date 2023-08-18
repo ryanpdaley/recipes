@@ -18,6 +18,7 @@ import ShoppingList from "./components/PrintableRecipe/ComponentToPrint";
 import { SelectedRecipeProps } from "../../types";
 import { useMediaQuery } from "react-responsive";
 import { MAX_MOBILE_WIDTH_PX } from "../../constants";
+import { eventGA } from "../../lib/ga";
 
 type RecipeViewProps = {
   isVisible?: boolean;
@@ -39,11 +40,29 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
     const localPath = `../../data/${file}`;
     const response = await fetch(localPath);
     if (!response.ok) {
+      eventGA({ category: "networkEvent", action: "recipeLoad_FAIL" });
       throw new Error("Data could not be fetched!");
     } else {
+      eventGA({ category: "networkEvent", action: "recipeLoad_SUCCESS" });
       return response.json();
     }
   };
+
+  useEffect(() => {
+    if (isTabletOrMobile) {
+      eventGA({
+        category: "userAction",
+        action: "viewSizeChange",
+        label: "fullToMobile",
+      });
+    } else {
+      eventGA({
+        category: "userAction",
+        action: "viewSizeChange",
+        label: "MobileToFull",
+      });
+    }
+  });
 
   const RecipeView = ({ isVisible }: RecipeViewProps) => {
     if (recipe === null) return null;
@@ -103,12 +122,22 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
   }, [checkedItems]);
 
   const reactToPrintContentRecipe = useCallback(() => {
+    eventGA({
+      category: "userAction",
+      action: "recipePrintContent",
+      label: selectedRecipe.title,
+    });
     return componentRefRecipe.current;
-  }, []);
+  }, [selectedRecipe.title]);
 
   const reactToPrintContentShoppingList = useCallback(() => {
+    eventGA({
+      category: "userAction",
+      action: "recipePrintShoppingList",
+      label: selectedRecipe.title,
+    });
     return componentRefShoppingList.current;
-  }, []);
+  }, [selectedRecipe.title]);
 
   const reactToPrintTriggerRecipe = useCallback(() => {
     return (

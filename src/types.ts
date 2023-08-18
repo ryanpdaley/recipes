@@ -79,3 +79,18 @@ export type SelectedRecipeProps = {
     src: string;
   };
 };
+
+export type GaEventObj = {
+  category: string;
+  action: string;
+  label?: string;
+  value?: number;
+  nonInteraction?: boolean;
+  transport?: "beacon" | "xhr" | "image";
+};
+
+export type GaPageviewObj = {
+  hitType: string;
+  page: string;
+  title: string;
+};
