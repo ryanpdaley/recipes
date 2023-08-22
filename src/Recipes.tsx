@@ -14,7 +14,6 @@ const initialState = {
 };
 
 const parseRoute = (route: string | undefined) => {
-  console.log(route);
   if (route === undefined) {
     return initialState;
   } else {
