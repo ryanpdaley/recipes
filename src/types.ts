@@ -81,7 +81,7 @@ export type SelectedRecipeProps = {
 };
 
 export type GaEventObj = {
-  category: string;
+  category: "userAction" | "networkEvent" | "version";
   action: string;
   label?: string;
   value?: number;

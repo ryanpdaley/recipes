@@ -10,6 +10,7 @@ import {
 
 import type { RecipeInfoProps } from "../../../../types";
 import { convertDecimals } from "../../../../lib/formatters";
+import { eventGA } from "../../../../lib/ga";
 
 const Description = ({ recipeInfo }: RecipeInfoProps) => {
   return (
@@ -86,7 +87,17 @@ const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
           {sourceLabel}
         </Text>
       ) : (
-        <Link url={sourceURL} target="_blank">
+        <Link
+          url={sourceURL}
+          onClick={() => {
+            eventGA({
+              category: "userAction",
+              action: "link_clicked",
+              label: sourceURL,
+            });
+          }}
+          target="_blank"
+        >
           <Text variant="bodyMd" color="subdued" as="p">
             {sourceLabel}
           </Text>
