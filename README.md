@@ -49,10 +49,12 @@ The json recipe format is:
 - [ ] Soon:
   - [ ] Testing (React | `Jest` | `@testing-library/react`)
   - [ ] Look into using `react-helmet` for dynamic metadata / SEO
+  - [ ] Add recipe meta tags
   - [x] Optimize components
   - [x] Clean up mobile / desktop / print views (currently working, but there is a lot of repetition)
-  - [ ] Hook up analytics
+  - [x] Hook up analytics
   - [x] Update to Shopify Polaris v12
+  - [x] Add versioning to build
 - [ ] Future
   - [ ] Consume the graphQL endpoint once finished
   - [ ] Implement the front end to add new recipes
