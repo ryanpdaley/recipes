@@ -38,6 +38,7 @@ export interface fractionMap {
 export interface SelectedRecipe {
   title: string;
   src: string;
+  route: string;
 }
 
 export type recipeDirectionsProps = { recipeDirections: string[] };

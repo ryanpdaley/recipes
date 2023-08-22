@@ -1,34 +1,42 @@
 [
   {
     "title": "Garden Gold Soup",
-    "src": "sampleRecipe.json"
+    "src": "sampleRecipe.json",
+    "route": "gardengoldsoup"
   },
   {
     "title": "Wacky Cake",
-    "src": "sampleRecipe1.json"
+    "src": "sampleRecipe1.json",
+    "route": "wackycake"
   },
   {
     "title": "Banana Banana Bread",
-    "src": "sampleRecipe2.json"
+    "src": "sampleRecipe2.json",
+    "route": "bananabananabread"
   },
   {
     "title": "Sheet Pan Cashew Chicken",
-    "src": "sampleRecipe3.json"
+    "src": "sampleRecipe3.json",
+    "route": "sheetpancashewchicken"
   },
   {
     "title": "Brown Rice Salad",
-    "src": "sampleRecipe4.json"
+    "src": "sampleRecipe4.json",
+    "route": "brownricesalad"
   },
   {
     "title": "Shakshuka",
-    "src": "sampleRecipe5.json"
+    "src": "sampleRecipe5.json",
+    "route": "shakshuka"
   },
   {
     "title": "Classic Waffles",
-    "src": "sampleRecipe6.json"
+    "src": "sampleRecipe6.json",
+    "route": "classicwaffles"
   },
   {
     "title": "One Skillet 'Egg Roll in a Bowl'",
-    "src": "sampleRecipe7.json"
+    "src": "sampleRecipe7.json",
+    "route": "eggrollinabowl"
   }
 ]

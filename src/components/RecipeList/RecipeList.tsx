@@ -1,12 +1,13 @@
 import { Card, List, Link } from "@shopify/polaris";
 import { RecipeListProps, SelectedRecipe } from "../../types";
 import { Key } from "react";
-
+import { useNavigate } from "react-router-dom";
 const EmptyState = () => {
   return <div>Empty</div>;
 };
 
 const RecipeListView = ({ recipeInfo, setSelectedRecipe }: RecipeListProps) => {
+  const navigate = useNavigate();
   return (
     <List type="bullet">
       {recipeInfo.map(
@@ -16,6 +17,7 @@ const RecipeListView = ({ recipeInfo, setSelectedRecipe }: RecipeListProps) => {
               <Link
                 onClick={() => {
                   setSelectedRecipe(recipe);
+                  navigate(`/${recipe.route}`);
                 }}
               >
                 {recipe.title}
