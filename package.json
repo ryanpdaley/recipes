@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-react": "^7.22.5",
     "@shopify/polaris": "^12.0.0-beta.0",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
@@ -22,7 +23,11 @@
     "web-vitals": "^3.4.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "eslint-plugin-react": "^7.33.2"
   },
   "scripts": {
     "start": "export REACT_APP_VERSION=$(git rev-parse --short HEAD) && react-scripts start",
