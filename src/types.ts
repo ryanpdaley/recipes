@@ -7,8 +7,8 @@ export interface Recipe {
 interface RecipeInfo {
   title: string;
   makes?: null | string;
-  prepTime?: null | { value: number; unit: string };
-  cookTime?: null | { value: number; unit: string };
+  prepTime?: null | { value: number; unit: "hours" | "minutes" | "seconds" };
+  cookTime?: null | { value: number; unit: "hours" | "minutes" | "seconds" };
   description?: null | string;
   source?: null | { label: string; url: null | string };
 }
