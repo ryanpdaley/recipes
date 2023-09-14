@@ -95,3 +95,33 @@ export type GaPageviewObj = {
   page: string;
   title: string;
 };
+
+export type StructuredRecipe = {
+  at_context: string;
+  at_type: string;
+  name: string;
+  image?: string[];
+  author?: {
+    at_type: string;
+    name: string;
+  };
+  datePublished?: string;
+  description?: string;
+  prepTime?: string;
+  cookTime?: string;
+  totalTime?: string;
+  keywords?: string;
+  recipeYield?: string;
+  recipeCategory?: string;
+  recipeCuisine?: string;
+  recipeIngredient?: string[];
+  recipeInstructions?: [
+    {
+      at_type: "HowToStep";
+      name?: string;
+      text?: string;
+      url?: string;
+      image?: string;
+    }
+  ];
+};
