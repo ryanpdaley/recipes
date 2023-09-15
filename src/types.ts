@@ -2,13 +2,14 @@ export interface Recipe {
   info: RecipeInfo;
   ingredients: IngredientSection[];
   directions: string[];
+  structuredData: StructuredRecipe;
 }
 
 interface RecipeInfo {
   title: string;
   makes?: null | string;
-  prepTime?: null | { value: number; unit: string };
-  cookTime?: null | { value: number; unit: string };
+  prepTime?: null | { value: number; unit: "hours" | "minutes" | "seconds" };
+  cookTime?: null | { value: number; unit: "hours" | "minutes" | "seconds" };
   description?: null | string;
   source?: null | { label: string; url: null | string };
 }
@@ -38,6 +39,7 @@ export interface fractionMap {
 export interface SelectedRecipe {
   title: string;
   src: string;
+  route: string;
 }
 
 export type recipeDirectionsProps = { recipeDirections: string[] };
@@ -93,4 +95,34 @@ export type GaPageviewObj = {
   hitType: string;
   page: string;
   title: string;
+};
+
+export type StructuredRecipe = {
+  at_context: string;
+  at_type: string;
+  name: string;
+  image?: string[];
+  author?: {
+    at_type: string;
+    name: string;
+  };
+  datePublished?: string;
+  description?: string;
+  prepTime?: string;
+  cookTime?: string;
+  totalTime?: string;
+  keywords?: string;
+  recipeYield?: string;
+  recipeCategory?: string;
+  recipeCuisine?: string;
+  recipeIngredient?: string[];
+  recipeInstructions?: [
+    {
+      at_type: "HowToStep";
+      name?: string;
+      text?: string;
+      url?: string;
+      image?: string;
+    }
+  ];
 };

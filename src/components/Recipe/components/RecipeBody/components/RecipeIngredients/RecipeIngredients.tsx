@@ -2,9 +2,8 @@ import { VerticalStack, Text, Tooltip } from "@shopify/polaris";
 import {
   RecipeIngredientsProps,
   IngredientSectionProps,
-  IngredientItem,
 } from "../../../../../../types";
-import { convertDecimals } from "../../../../../../lib/formatters";
+import { parseItem } from "../../../../../../lib/formatters";
 import { eventGA } from "../../../../../../lib/ga";
 
 const IngredientsSection = ({
@@ -27,43 +26,6 @@ const IngredientsSection = ({
       action: "ingredient_Checked",
       label: JSON.stringify(checkedItems),
     });
-  };
-
-  const getMeasurementString = (
-    measurement: null | number | number[]
-  ): string => {
-    if (measurement == null || measurement === undefined) {
-      return "";
-    } else {
-      if (Array.isArray(measurement) && measurement.length === 2) {
-        return `${convertDecimals(measurement[0])}-${convertDecimals(
-          measurement[1]
-        )}`;
-      } else if (typeof measurement === "number") {
-        return `${convertDecimals(measurement)}`;
-      }
-    }
-    return "";
-  };
-  const parseItem = (item: IngredientItem) => {
-    let parsedItem = { rowItem: "", label: "" };
-    const optionalString = item.isOptional ? "[optional]" : "";
-    const measurementString =
-      item && item.measurement ? getMeasurementString(item.measurement) : "";
-
-    const measurementUnit =
-      item.measurementUnit !== null ? ` ${item.measurementUnit} ` : " ";
-
-    const qualifierString =
-      item.qualifierString !== null ? ` (${item.qualifierString})` : "";
-
-    parsedItem[
-      "rowItem"
-    ] = `${measurementString}${measurementUnit}${item.name}`;
-    parsedItem[
-      "label"
-    ] = `${optionalString}${parsedItem["rowItem"]} ${qualifierString}`;
-    return parsedItem;
   };
 
   return (

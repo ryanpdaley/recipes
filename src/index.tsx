@@ -4,6 +4,7 @@ import reportWebVitals from "./reportWebVitals";
 import "@shopify/polaris/build/esm/styles.css";
 import Recipes from "./Recipes";
 import { initializeGA, eventGA } from "./lib/ga";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(
 initializeGA();
 root.render(
   <React.StrictMode>
-    <Recipes />
+    <BrowserRouter>
+      <Recipes />
+    </BrowserRouter>
     <>
       {eventGA({
         category: "version",

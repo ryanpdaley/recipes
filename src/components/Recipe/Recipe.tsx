@@ -7,8 +7,9 @@ import {
   VerticalStack,
   HorizontalStack,
 } from "@shopify/polaris";
-import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
+// import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
 import RecipeHead from "./components/RecipeHead/RecipeHead";
+import MetaHead from "./components/MetaHead/MetaHead";
 import {
   MobileRecipeBodyComponent,
   RecipeBodyComponent,
@@ -141,15 +142,19 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
 
   const reactToPrintTriggerRecipe = useCallback(() => {
     return (
-      <Button icon={PrintMajor} outline>
-        Print Recipe
-      </Button>
+      // <Button outline icon={PrintMajor}>
+      //   Print Recipe
+      // </Button>
+      <Button outline>Print Recipe</Button>
     );
   }, []);
 
   const reactToPrintTriggerShoppingList = useCallback(() => {
     return (
-      <Button disabled={shoppingListState} icon={CartMajor} outline>
+      // <Button disabled={shoppingListState} icon={CartMajor} outline>
+      //   Print Shopping List
+      // </Button>
+      <Button disabled={shoppingListState} outline>
         Print Shopping List
       </Button>
     );
@@ -169,6 +174,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
         <div ref={componentRefRecipe}>
           {recipe !== null && (
             <>
+              <MetaHead recipe={recipe} />
               <div className="recipe-title">
                 <Text variant="heading3xl" as="h2">
                   {title}
