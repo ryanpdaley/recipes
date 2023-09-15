@@ -2,6 +2,7 @@ export interface Recipe {
   info: RecipeInfo;
   ingredients: IngredientSection[];
   directions: string[];
+  structuredData: StructuredRecipe;
 }
 
 interface RecipeInfo {

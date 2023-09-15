@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import recipeInfo from "./recipes.json";
 import { eventGA } from "./lib/ga";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
+const helmet = require("react-helmet");
+const { Helmet } = helmet;
 
 const initialState = {
   title: "Initial",
@@ -71,10 +73,13 @@ const RecipeChild = () => {
 
 const Recipes = () => {
   return (
-    <Routes>
-      <Route path="/" element={<RecipeChild />}></Route>
-      <Route path="/:id" element={<RecipeChild />}></Route>
-    </Routes>
+    <>
+      <Helmet />
+      <Routes>
+        <Route path="/" element={<RecipeChild />}></Route>
+        <Route path="/:id" element={<RecipeChild />}></Route>
+      </Routes>
+    </>
   );
 };
 export default Recipes;
