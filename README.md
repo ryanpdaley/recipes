@@ -48,8 +48,8 @@ The json recipe format is:
 
 - [ ] Soon:
   - [ ] Testing (React | `Jest` | `@testing-library/react`)
-  - [ ] Look into using `react-helmet` for dynamic metadata / SEO
-  - [ ] Add recipe meta tags
+  - [x] Look into using `react-helmet` for dynamic metadata / SEO
+  - [x] Add recipe meta tags
   - [x] Optimize components
   - [x] Clean up mobile / desktop / print views (currently working, but there is a lot of repetition)
   - [x] Hook up analytics
