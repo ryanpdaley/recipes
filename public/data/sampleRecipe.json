@@ -113,11 +113,9 @@
     "name": "Garden Gold Soup",
     "author": { "@type": "Person", "name": "Ryan Daley" },
     "description": "Garden Gold Soup Garden Gold Soup Garden Gold Soup Garden Gold Soup Garden Gold Soup Garden Gold Soup Garden Gold Soup",
-    "times": {
-      "prepTime": "PT15M",
-      "cookTime": "PT1H",
-      "totalTime": "PT1H15M"
-    },
+    "prepTime": "PT15M",
+    "cookTime": "PT1H",
+    "totalTime": "PT1H15M",
     "recipeYield": "Serves 8",
     "recipeIngredient": [
       "1 pound Carrots (medium sized)",
