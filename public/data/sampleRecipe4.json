@@ -116,7 +116,9 @@
     "name": "Brown Rice Salad",
     "author": { "@type": "Person", "name": "Ryan Daley" },
     "description": "Cook time and Prep time don't include the time to prepare rice!",
-    "times": { "prepTime": "PT15M", "cookTime": "PT15M", "totalTime": "PT30M" },
+    "prepTime": "PT15M",
+    "cookTime": "PT15M",
+    "totalTime": "PT30M",
     "recipeYield": "6 servings as a side",
     "recipeIngredient": [
       "3 cups Brown rice (cooked)",

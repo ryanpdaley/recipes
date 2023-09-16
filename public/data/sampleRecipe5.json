@@ -120,7 +120,9 @@
     "name": "Shakshuka",
     "author": { "@type": "Person", "name": "Ryan Daley" },
     "description": "Shakshuka is a North African and Middle Eastern meal of poached eggs in a simmering tomato sauce with spices. It's easy, healthy and takes less than 30 minutes to make.",
-    "times": { "prepTime": "PT10M", "cookTime": "PT20M", "totalTime": "PT30M" },
+    "prepTime": "PT10M",
+    "cookTime": "PT20M",
+    "totalTime": "PT30M",
     "recipeYield": "6 servings",
     "recipeIngredient": [
       "2 tablespoons Olive oil",

@@ -145,7 +145,9 @@
     "name": "Sheet Pan Cashew Chicken",
     "author": { "@type": "Person", "name": "Ryan Daley" },
     "description": "It's not news that I love a good sheet pan meal, and these recipes are some of the most frequently requested from y'all as well! Clean up is a breeze, minimal preparation is required and your meal prep for the week is taken care of…what more could you need?",
-    "times": { "prepTime": "PT30M", "cookTime": "PT25M", "totalTime": "PT55M" },
+    "prepTime": "PT30M",
+    "cookTime": "PT25M",
+    "totalTime": "PT55M",
     "recipeYield": "4 servings",
     "recipeIngredient": [
       "3 boneless, skinless chicken breasts (cut into 1/2-1 inch pieces)",

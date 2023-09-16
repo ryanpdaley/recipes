@@ -92,7 +92,9 @@
     "name": "Classic Waffles",
     "author": { "@type": "Person", "name": "Ryan Daley" },
     "description": "These waffles turn out lovely and crispy. Perfect for any day of the week!",
-    "times": { "prepTime": "PT10M", "cookTime": "PT15M", "totalTime": "PT25M" },
+    "prepTime": "PT10M",
+    "cookTime": "PT15M",
+    "totalTime": "PT25M",
     "recipeYield": "10 to 12 waffles",
     "recipeIngredient": [
       "2 cups All-purpose flour",

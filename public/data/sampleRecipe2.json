@@ -89,11 +89,9 @@
     "name": "Banana Banana Bread",
     "author": { "@type": "Person", "name": "Ryan Daley" },
     "description": "This banana bread recipe creates the most delicious, moist loaf with loads of banana flavor. Why compromise the banana flavor? Friends and family love my recipe and say it's by far the best! It tastes wonderful toasted. Enjoy!",
-    "times": {
-      "prepTime": "PT15M",
-      "cookTime": "PT1H30M",
-      "totalTime": "PT1H45M"
-    },
+    "prepTime": "PT15M",
+    "cookTime": "PT1H30M",
+    "totalTime": "PT1H45M",
     "recipeIngredient": [
       "2 cups All-purpose flour",
       "1 teaspoon Baking soda",
