@@ -128,7 +128,7 @@ const appendCookTimes = (recipe, structuredRecipe) => {
   if (prepTime > 0 || cookTime > 0) {
     times["totalTime"] = secondsToISO8601(prepTime + cookTime);
   }
-  return { ...structuredRecipe, times };
+  return { ...structuredRecipe, ...times };
 }
 
 const appendDescription = (recipe, structuredRecipe) => {
