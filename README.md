@@ -15,8 +15,8 @@ The json recipe format is:
     info: {
         title: string;
         makes?: null | string;
-        prepTime?: null | { value: number; unit: string };
-        cookTime?: null | { value: number; unit: string };
+        prepTime?: null | { value: number; unit: "hours" | "minutes" | "seconds" };
+        cookTime?: null | { value: number; unit: "hours" | "minutes" | "seconds" };
         description?: null | string;
         source?: null | { label: string; url: null | string };
     },
@@ -28,7 +28,7 @@ The json recipe format is:
                     name: string;
                     measurement?: null | number[] | number;
                     measurementUnit?: null | string;
-                    qualifierString:? null | string;
+                    qualifierString?: null | string;
                     isConvertibleUnit?: boolean;
                     isOptional?: boolean;
                 },
@@ -40,9 +40,17 @@ The json recipe format is:
     directions: [
         string;
         ...
-    ]
+    ],
+    structuredData: JSON;
 }
 ```
+
+## Features:
+
+- Google Analytics
+- Printable recipe / shopping list
+- Dynamic recipe metadata / structured data
+- Functional routing
 
 ## ToDo:
 
@@ -56,9 +64,10 @@ The json recipe format is:
   - [x] Update to Shopify Polaris v12
   - [x] Add versioning to build
 - [ ] Future
-  - [ ] Consume the graphQL endpoint once finished
-  - [ ] Implement the front end to add new recipes
-  - [ ] Add option to show ads
+  - [ ] Build GraphQL backend using AWS AppSync
+  - [ ] Consume the GraphQL endpoint once finished
+  - [ ] Implement the front end to add / update / delete recipes
+  - [ ] Add option to show ads (?)
 
 ## Available Scripts
 
