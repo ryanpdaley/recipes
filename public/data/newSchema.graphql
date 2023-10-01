@@ -1,0 +1,133 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type RecipeConnection {
+  items: [Recipe]
+  nextToken: String
+}
+
+type Query {
+  getRecipe(id: ID!): Recipe
+  listRecipes(
+    filter: TableRecipeFilterInput
+    limit: Int
+    nextToken: String
+  ): RecipeConnection
+}
+
+type Mutation {
+  createRecipe(input: CreateRecipeInput!): Recipe
+  updateRecipe(input: UpdateRecipeInput!): Recipe
+  deleteRecipe(input: DeleteRecipeInput!): Recipe
+}
+
+input TableRecipeFilterInput {
+  id: TableIDFilterInput
+  title: TableStringFilterInput
+  route: TableStringFilterInput
+  directions: TableStringFilterInput
+}
+
+input TableStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input TableIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+type Recipe {
+  id: ID!
+  title: String!
+  route: String!
+  info: RecipeInfo!
+  ingredients: RecipeIngredientsList!
+  directions: [String]!
+  structuredData: AWSJSON!
+}
+
+input CreateRecipeInput {
+  title: String!
+  route: String!
+  info: RecipeInfo!
+  ingredients: RecipeIngredientsList!
+  directions: [String]!
+  structuredData: AWSJSON!
+}
+
+type RecipeInfo {
+  recipe: Recipe!
+  makes: String
+  prepTime: RecipeTime
+  cookTime: RecipeTime
+  description: String
+  source: RecipeSource
+}
+
+type RecipeTime {
+  recipeInfo: RecipeInfo!
+  value: Float
+  unit(timeUnit: RecipeTimeUnits): String
+}
+
+enum RecipeTimeUnits {
+  hours
+  minutes
+  seconds
+}
+
+type RecipeSource {
+  recipeInfo: RecipeInfo!
+  label: String
+  url: AWSURL
+}
+
+type RecipeIngredientsList {
+  recipe: Recipe!
+  subHeading: String
+  items: [RecipeIngredient]
+}
+
+type RecipeIngredient {
+  recipeIngredientsList: RecipeIngredientsList
+  name: String!
+  measurement: [Float]
+  measurementUnit: String
+  qualifierString: String
+  isConvertibleUnit: Boolean
+  isOptional: Boolean
+}
+
+input UpdateRecipeInput {
+  id: ID!
+  title: String!
+  route: String!
+  info: RecipeInfo!
+  ingredients: RecipeIngredientsList!
+  directions: [String]!
+  structuredData: AWSJSON!
+}
+
+input DeleteRecipeInput {
+  id: ID!
+}

@@ -1,0 +1,421 @@
+input CreateRecipeInfoInput {
+  makes: String
+  description: String
+}
+
+input CreateRecipeIngredientInput {
+  name: String!
+  measurement: [Int]
+  measurementUnit: String
+  qualifierString: String
+  isConvertibleUnit: Boolean
+  isOptional: Boolean
+}
+
+input CreateRecipeIngredientsListInput {
+  subHeading: String
+}
+
+input CreateRecipeInput {
+  title: String!
+  route: String!
+  directions: [String]!
+  structuredData: AWSJSON!
+}
+
+input CreateRecipeSourceInput {
+  label: String
+  url: AWSURL
+}
+
+input CreateRecipeTimeInput {
+  value: Int
+  unit: String
+}
+
+input DeleteRecipeInfoInput {
+  id: ID!
+}
+
+input DeleteRecipeIngredientInput {
+  id: ID!
+}
+
+input DeleteRecipeIngredientsListInput {
+  id: ID!
+}
+
+input DeleteRecipeInput {
+  id: ID!
+}
+
+input DeleteRecipeSourceInput {
+  id: ID!
+}
+
+input DeleteRecipeTimeInput {
+  id: ID!
+}
+
+type Recipe {
+  id: ID!
+  title: String!
+  route: String!
+  info: RecipeInfo!
+  ingredients: RecipeIngredientsList!
+  directions: [String]!
+  structuredData: AWSJSON!
+}
+
+type RecipeConnection {
+  items: [Recipe]
+  nextToken: String
+}
+
+type RecipeInfo {
+  id: ID!
+  makes: String
+  prepTime: RecipeTime
+  cookTime: RecipeTime
+  description: String
+  source: RecipeSource
+}
+
+type RecipeInfoConnection {
+  items: [RecipeInfo]
+  nextToken: String
+}
+
+type RecipeIngredient {
+  id: ID!
+  name: String!
+  measurement: [Float]
+  measurementUnit: String
+  qualifierString: String
+  isConvertibleUnit: Boolean
+  isOptional: Boolean
+}
+
+type RecipeIngredientConnection {
+  items: [RecipeIngredient]
+  nextToken: String
+}
+
+type RecipeIngredientsList {
+  id: ID!
+  subHeading: String
+  items: [RecipeIngredient]
+}
+
+type RecipeIngredientsListConnection {
+  items: [RecipeIngredientsList]
+  nextToken: String
+}
+
+type RecipeSource {
+  id: ID!
+  label: String
+  url: AWSURL
+}
+
+type RecipeSourceConnection {
+  items: [RecipeSource]
+  nextToken: String
+}
+
+type RecipeTime {
+  id: ID!
+  value: Float
+  unit(timeUnit: RecipeTimeUnits): String
+}
+
+type RecipeTimeConnection {
+  items: [RecipeTime]
+  nextToken: String
+}
+
+enum RecipeTimeUnits {
+  hours
+  minutes
+  seconds
+}
+
+input TableBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input TableFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input TableIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input TableIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input TableRecipeFilterInput {
+  id: TableIDFilterInput
+  title: TableStringFilterInput
+  route: TableStringFilterInput
+  directions: TableStringFilterInput
+}
+
+input TableRecipeInfoFilterInput {
+  id: TableIDFilterInput
+  makes: TableStringFilterInput
+  description: TableStringFilterInput
+}
+
+input TableRecipeIngredientFilterInput {
+  id: TableIDFilterInput
+  name: TableStringFilterInput
+  measurement: TableIntFilterInput
+  measurementUnit: TableStringFilterInput
+  qualifierString: TableStringFilterInput
+  isConvertibleUnit: TableBooleanFilterInput
+  isOptional: TableBooleanFilterInput
+}
+
+input TableRecipeIngredientsListFilterInput {
+  id: TableIDFilterInput
+  subHeading: TableStringFilterInput
+}
+
+input TableRecipeSourceFilterInput {
+  id: TableIDFilterInput
+  label: TableStringFilterInput
+  url: TableStringFilterInput
+}
+
+input TableRecipeTimeFilterInput {
+  id: TableIDFilterInput
+  value: TableIntFilterInput
+  unit: TableStringFilterInput
+}
+
+input TableStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input UpdateRecipeInfoInput {
+  id: ID!
+  makes: String
+  description: String
+}
+
+input UpdateRecipeIngredientInput {
+  id: ID!
+  name: String
+  measurement: [Int]
+  measurementUnit: String
+  qualifierString: String
+  isConvertibleUnit: Boolean
+  isOptional: Boolean
+}
+
+input UpdateRecipeIngredientsListInput {
+  id: ID!
+  subHeading: String
+}
+
+input UpdateRecipeInput {
+  id: ID!
+  title: String
+  route: String
+  directions: [String]
+  structuredData: AWSJSON
+}
+
+input UpdateRecipeSourceInput {
+  id: ID!
+  label: String
+  url: AWSURL
+}
+
+input UpdateRecipeTimeInput {
+  id: ID!
+  value: Int
+  unit: String
+}
+
+type Mutation {
+  createRecipeSource(input: CreateRecipeSourceInput!): RecipeSource
+  updateRecipeSource(input: UpdateRecipeSourceInput!): RecipeSource
+  deleteRecipeSource(input: DeleteRecipeSourceInput!): RecipeSource
+  createRecipeIngredient(input: CreateRecipeIngredientInput!): RecipeIngredient
+  updateRecipeIngredient(input: UpdateRecipeIngredientInput!): RecipeIngredient
+  deleteRecipeIngredient(input: DeleteRecipeIngredientInput!): RecipeIngredient
+  createRecipeIngredientsList(
+    input: CreateRecipeIngredientsListInput!
+  ): RecipeIngredientsList
+  updateRecipeIngredientsList(
+    input: UpdateRecipeIngredientsListInput!
+  ): RecipeIngredientsList
+  deleteRecipeIngredientsList(
+    input: DeleteRecipeIngredientsListInput!
+  ): RecipeIngredientsList
+  createRecipeTime(input: CreateRecipeTimeInput!): RecipeTime
+  updateRecipeTime(input: UpdateRecipeTimeInput!): RecipeTime
+  deleteRecipeTime(input: DeleteRecipeTimeInput!): RecipeTime
+  createRecipeInfo(input: CreateRecipeInfoInput!): RecipeInfo
+  updateRecipeInfo(input: UpdateRecipeInfoInput!): RecipeInfo
+  deleteRecipeInfo(input: DeleteRecipeInfoInput!): RecipeInfo
+  createRecipe(input: CreateRecipeInput!): Recipe
+  updateRecipe(input: UpdateRecipeInput!): Recipe
+  deleteRecipe(input: DeleteRecipeInput!): Recipe
+}
+
+type Query {
+  getRecipeSource(id: ID!): RecipeSource
+  listRecipeSources(
+    filter: TableRecipeSourceFilterInput
+    limit: Int
+    nextToken: String
+  ): RecipeSourceConnection
+  getRecipeIngredient(id: ID!): RecipeIngredient
+  listRecipeIngredients(
+    filter: TableRecipeIngredientFilterInput
+    limit: Int
+    nextToken: String
+  ): RecipeIngredientConnection
+  getRecipeIngredientsList(id: ID!): RecipeIngredientsList
+  listRecipeIngredientsLists(
+    filter: TableRecipeIngredientsListFilterInput
+    limit: Int
+    nextToken: String
+  ): RecipeIngredientsListConnection
+  getRecipeTime(id: ID!): RecipeTime
+  listRecipeTimes(
+    filter: TableRecipeTimeFilterInput
+    limit: Int
+    nextToken: String
+  ): RecipeTimeConnection
+  getRecipeInfo(id: ID!): RecipeInfo
+  listRecipeInfos(
+    filter: TableRecipeInfoFilterInput
+    limit: Int
+    nextToken: String
+  ): RecipeInfoConnection
+  getRecipe(id: ID!): Recipe
+  listRecipes(
+    filter: TableRecipeFilterInput
+    limit: Int
+    nextToken: String
+  ): RecipeConnection
+}
+
+type Subscription {
+  onCreateRecipeSource(id: ID, label: String, url: AWSURL): RecipeSource
+    @aws_subscribe(mutations: ["createRecipeSource"])
+  onUpdateRecipeSource(id: ID, label: String, url: AWSURL): RecipeSource
+    @aws_subscribe(mutations: ["updateRecipeSource"])
+  onDeleteRecipeSource(id: ID, label: String, url: AWSURL): RecipeSource
+    @aws_subscribe(mutations: ["deleteRecipeSource"])
+  onCreateRecipeIngredient(
+    id: ID
+    name: String
+    measurement: [Int]
+    measurementUnit: String
+    qualifierString: String
+  ): RecipeIngredient @aws_subscribe(mutations: ["createRecipeIngredient"])
+  onUpdateRecipeIngredient(
+    id: ID
+    name: String
+    measurement: [Int]
+    measurementUnit: String
+    qualifierString: String
+  ): RecipeIngredient @aws_subscribe(mutations: ["updateRecipeIngredient"])
+  onDeleteRecipeIngredient(
+    id: ID
+    name: String
+    measurement: [Int]
+    measurementUnit: String
+    qualifierString: String
+  ): RecipeIngredient @aws_subscribe(mutations: ["deleteRecipeIngredient"])
+  onCreateRecipeIngredientsList(
+    id: ID
+    subHeading: String
+  ): RecipeIngredientsList
+    @aws_subscribe(mutations: ["createRecipeIngredientsList"])
+  onUpdateRecipeIngredientsList(
+    id: ID
+    subHeading: String
+  ): RecipeIngredientsList
+    @aws_subscribe(mutations: ["updateRecipeIngredientsList"])
+  onDeleteRecipeIngredientsList(
+    id: ID
+    subHeading: String
+  ): RecipeIngredientsList
+    @aws_subscribe(mutations: ["deleteRecipeIngredientsList"])
+  onCreateRecipeTime(id: ID, value: Int, unit: String): RecipeTime
+    @aws_subscribe(mutations: ["createRecipeTime"])
+  onUpdateRecipeTime(id: ID, value: Int, unit: String): RecipeTime
+    @aws_subscribe(mutations: ["updateRecipeTime"])
+  onDeleteRecipeTime(id: ID, value: Int, unit: String): RecipeTime
+    @aws_subscribe(mutations: ["deleteRecipeTime"])
+  onCreateRecipeInfo(id: ID, makes: String, description: String): RecipeInfo
+    @aws_subscribe(mutations: ["createRecipeInfo"])
+  onUpdateRecipeInfo(id: ID, makes: String, description: String): RecipeInfo
+    @aws_subscribe(mutations: ["updateRecipeInfo"])
+  onDeleteRecipeInfo(id: ID, makes: String, description: String): RecipeInfo
+    @aws_subscribe(mutations: ["deleteRecipeInfo"])
+  onCreateRecipe(
+    id: ID
+    title: String
+    route: String
+    directions: [String]
+    structuredData: AWSJSON
+  ): Recipe @aws_subscribe(mutations: ["createRecipe"])
+  onUpdateRecipe(
+    id: ID
+    title: String
+    route: String
+    directions: [String]
+    structuredData: AWSJSON
+  ): Recipe @aws_subscribe(mutations: ["updateRecipe"])
+  onDeleteRecipe(
+    id: ID
+    title: String
+    route: String
+    directions: [String]
+    structuredData: AWSJSON
+  ): Recipe @aws_subscribe(mutations: ["deleteRecipe"])
+}

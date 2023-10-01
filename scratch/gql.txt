@@ -1,0 +1,92 @@
+# Click the orange "Play" button and select the createRecipeSource
+# mutation to create an object in DynamoDB.
+# If you see an error that starts with "Unable to assume role",
+# wait a moment and try again.
+mutation createRecipeSource($createrecipesourceinput: CreateRecipeSourceInput!) {
+  createRecipeSource(input: $createrecipesourceinput) {
+    id
+    label
+    url
+  }
+}
+
+# After running createRecipeSource, try running the listRecipeSources query.
+query listRecipeSources {
+  listRecipeSources {
+    items {
+      id
+      label
+      url
+    }
+  }
+}
+
+{
+  "createrecipesourceinput": {
+    "label": "allrecipes.com",
+    "url": "https://www.allrecipes.com/recipe/20144/banana-banana-bread/"
+  }
+}
+
+________________________________________________________________________________
+
+mutation updateRecipeTime($updaterecipetimeinput: UpdateRecipeTimeInput!) {
+  updateRecipeTime(input: $updaterecipetimeinput) {
+    id
+    unit(timeUnit: minutes)
+    value
+  }
+}
+
+{
+  "updaterecipetimeinput": {
+    "id": "5c703950-f342-493c-9c08-10e4bcf7898f",
+    "unit":"minutes",
+    "value": 15
+  }
+}
+
+mutation MyMutation($unit: String = "minutes", $value: Float = 15) {
+  createRecipeTime(input: {unit: $unit, value: $value}) {
+    unit(timeUnit: hours)
+    value
+    id
+  }
+}
+
+
+mutation createRecipeIngredient($isConvertibleUnit: Boolean = false, $isOptional: Boolean = false, $measurement: [Int] = 10, $measurementUnit: String = "", $name: String = "", $qualifierString: String = "") {
+  createRecipeIngredient(input: {isConvertibleUnit: $isConvertibleUnit, isOptional: $isOptional, measurement: $measurement, measurementUnit: $measurementUnit, name: $name, qualifierString: $qualifierString})
+}
+
+mutation createRecipeIngredient($createrecipeingredient: CreateRecipeIngredientInput!) {
+  createRecipeIngredient(input:$createrecipeingredient) {
+    qualifierString
+    name
+    measurementUnit
+    measurement
+    isOptional
+    isConvertibleUnit
+    id
+  }
+}
+
+{
+  "createrecipeingredient": {
+    "isConvertibleUnit": true,
+    "isOptional": false,
+    "measurement": [2],
+    "measurementUnit": "cups",
+    "name": "All-purpose flour",
+    "qualifierString": null
+  }
+}
+
+{
+  "createrecipeingredientslist": {
+    "subHeading": null,
+    "items":[
+      
+    ]
+  }
+}

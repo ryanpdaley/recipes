@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/cli": "^12.5.1",
     "@babel/preset-react": "^7.22.5",
     "@shopify/polaris": "^12.0.0-beta.0",
     "@testing-library/jest-dom": "^6.1.3",
