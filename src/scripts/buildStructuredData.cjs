@@ -53,12 +53,14 @@ const getMeasurementString = (measurement) => {
 
 const parseItem = (item) => {
   let parsedItem = { rowItem: "", label: "" };
-  const optionalString = item.isOptional ? "[optional]" : "";
+  const optionalString = item.isOptional ? "[optional] " : "";
   const measurementString =
-    item && item.measurement ? getMeasurementString(item.measurement) : "";
+    item && item.measurement && item.measurement !== null
+      ? `${getMeasurementString(item.measurement)} `
+      : "";
 
   const measurementUnit =
-    item.measurementUnit !== null ? ` ${item.measurementUnit} ` : " ";
+    item.measurementUnit !== null ? `${item.measurementUnit} ` : "";
 
   const qualifierString =
     item.qualifierString !== null ? ` (${item.qualifierString})` : "";
@@ -183,4 +185,4 @@ const buildStructuredRecipe = (recipe) => {
   console.log(structuredRecipe);
 };
 
-readRecipe("sampleRecipe7.json").then((recipe) => buildStructuredRecipe(recipe))
+readRecipe("sampleRecipe8.json").then((recipe) => buildStructuredRecipe(recipe))

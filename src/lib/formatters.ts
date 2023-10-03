@@ -32,12 +32,14 @@ export const getMeasurementString = (
 
 export const parseItem = (item: IngredientItem) => {
   let parsedItem = { rowItem: "", label: "" };
-  const optionalString = item.isOptional ? "[optional]" : "";
+  const optionalString = item.isOptional ? "[optional] " : "";
   const measurementString =
-    item && item.measurement ? getMeasurementString(item.measurement) : "";
+    item && item.measurement && item.measurement !== null
+      ? `${getMeasurementString(item.measurement)} `
+      : "";
 
   const measurementUnit =
-    item.measurementUnit !== null ? ` ${item.measurementUnit} ` : " ";
+    item.measurementUnit !== null ? `${item.measurementUnit} ` : "";
 
   const qualifierString =
     item.qualifierString !== null ? ` (${item.qualifierString})` : "";
