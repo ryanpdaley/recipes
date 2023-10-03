@@ -38,5 +38,10 @@
     "title": "One Skillet 'Egg Roll in a Bowl'",
     "src": "sampleRecipe7.json",
     "route": "eggrollinabowl"
+  },
+  {
+    "title": "Tortilla Soup",
+    "src": "sampleRecipe8.json",
+    "route": "tortillasoup"
   }
 ]
