@@ -135,18 +135,12 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
   }, [selectedRecipe.title]);
 
   const reactToPrintTriggerRecipe = useCallback(() => {
-    return (
-      // <Button>Print Recipe</Button>
-      <Button  icon={PrintMajor}>
-        Print Recipe
-      </Button>
-    );
+    return <Button icon={PrintMajor}>Print Recipe</Button>;
   }, []);
 
   const reactToPrintTriggerShoppingList = useCallback(() => {
     return (
-      // <Button disabled={shoppingListState}>Print Shopping List</Button>
-      <Button disabled={shoppingListState} icon={CartMajor} >
+      <Button disabled={shoppingListState} icon={CartMajor}>
         Print Shopping List
       </Button>
     );
