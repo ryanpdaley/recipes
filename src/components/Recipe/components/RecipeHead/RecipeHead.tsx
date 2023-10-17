@@ -76,14 +76,14 @@ const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
     <InlineStack align="end">
       <Text
         variant="bodyMd"
-        color="subdued"
+        tone="subdued"
         as="p"
         id="recipe-head-info-sourceLabel"
       >
         Source:
       </Text>
       {sourceURL === null || sourceURL === undefined ? (
-        <Text variant="bodyMd" color="subdued" as="p">
+        <Text variant="bodyMd" tone="subdued" as="p">
           {sourceLabel}
         </Text>
       ) : (
@@ -98,7 +98,7 @@ const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
           }}
           target="_blank"
         >
-          <Text variant="bodyMd" color="subdued" as="p">
+          <Text variant="bodyMd" tone="subdued" as="p">
             {sourceLabel}
           </Text>
         </Link>
