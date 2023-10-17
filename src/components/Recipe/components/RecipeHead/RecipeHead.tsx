@@ -1,10 +1,10 @@
 import {
   Card,
-  VerticalStack,
-  HorizontalGrid,
+  BlockStack,
+  InlineGrid,
   Text,
   Link,
-  HorizontalStack,
+  InlineStack,
   Divider,
 } from "@shopify/polaris";
 
@@ -59,11 +59,11 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
 
   return (
     <div className="recipe-data">
-      <HorizontalGrid columns={blockCount}>
+      <InlineGrid columns={blockCount}>
         {yieldBlock}
         {cookTimeBlock}
         {prepTimeBlock}
-      </HorizontalGrid>
+      </InlineGrid>
     </div>
   );
 };
@@ -73,17 +73,17 @@ const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
   const sourceURL = recipeInfo.source?.url;
   if (sourceLabel === undefined) return <></>;
   return (
-    <HorizontalStack align="end">
+    <InlineStack align="end">
       <Text
         variant="bodyMd"
-        color="subdued"
+        tone="subdued"
         as="p"
         id="recipe-head-info-sourceLabel"
       >
         Source:
       </Text>
       {sourceURL === null || sourceURL === undefined ? (
-        <Text variant="bodyMd" color="subdued" as="p">
+        <Text variant="bodyMd" tone="subdued" as="p">
           {sourceLabel}
         </Text>
       ) : (
@@ -98,12 +98,12 @@ const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
           }}
           target="_blank"
         >
-          <Text variant="bodyMd" color="subdued" as="p">
+          <Text variant="bodyMd" tone="subdued" as="p">
             {sourceLabel}
           </Text>
         </Link>
       )}
-    </HorizontalStack>
+    </InlineStack>
   );
 };
 
@@ -111,12 +111,12 @@ const RecipeHead = ({ recipeInfo }: RecipeInfoProps) => {
   return (
     <div className="recipe-head">
       <Card>
-        <VerticalStack gap="5">
+        <BlockStack gap="500">
           <Description recipeInfo={recipeInfo} />
           <Divider />
           <MetaInfo recipeInfo={recipeInfo} />
           <SourceBlock recipeInfo={recipeInfo} />
-        </VerticalStack>
+        </BlockStack>
       </Card>
     </div>
   );

@@ -1,13 +1,7 @@
 import "./../../styles.css";
 import { useCallback, useEffect, useRef, useState } from "react";
-import {
-  Card,
-  Button,
-  Text,
-  VerticalStack,
-  HorizontalStack,
-} from "@shopify/polaris";
-// import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
+import { Card, Button, Text, BlockStack, InlineStack } from "@shopify/polaris";
+import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
 import RecipeHead from "./components/RecipeHead/RecipeHead";
 import MetaHead from "./components/MetaHead/MetaHead";
 import {
@@ -69,10 +63,10 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
     if (recipe === null) return null;
     else
       return (
-        <VerticalStack>
+        <BlockStack>
           <RecipeHead recipeInfo={recipe["info"]} />
           <div className="recipe-print-container">
-            <HorizontalStack>
+            <InlineStack>
               <div className="recipe-print-button">
                 <ReactToPrint
                   content={reactToPrintContentRecipe}
@@ -87,7 +81,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
                   trigger={reactToPrintTriggerShoppingList}
                 />
               </div>
-            </HorizontalStack>
+            </InlineStack>
           </div>
           <div className="recipe-body">
             {isVisible && isTabletOrMobile ? (
@@ -104,7 +98,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
               />
             )}
           </div>
-        </VerticalStack>
+        </BlockStack>
       );
   };
 
@@ -141,20 +135,12 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
   }, [selectedRecipe.title]);
 
   const reactToPrintTriggerRecipe = useCallback(() => {
-    return (
-      // <Button outline icon={PrintMajor}>
-      //   Print Recipe
-      // </Button>
-      <Button outline>Print Recipe</Button>
-    );
+    return <Button icon={PrintMajor}>Print Recipe</Button>;
   }, []);
 
   const reactToPrintTriggerShoppingList = useCallback(() => {
     return (
-      // <Button disabled={shoppingListState} icon={CartMajor} outline>
-      //   Print Shopping List
-      // </Button>
-      <Button disabled={shoppingListState} outline>
+      <Button disabled={shoppingListState} icon={CartMajor}>
         Print Shopping List
       </Button>
     );

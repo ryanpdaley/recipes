@@ -1,4 +1,4 @@
-import { VerticalStack, Text, Tooltip } from "@shopify/polaris";
+import { BlockStack, Text, Tooltip } from "@shopify/polaris";
 import {
   RecipeIngredientsProps,
   IngredientSectionProps,
@@ -72,7 +72,7 @@ const RecipeIngredients = ({
   setCheckedItems,
 }: RecipeIngredientsProps) => {
   return (
-    <VerticalStack gap="1">
+    <BlockStack gap="100">
       <Text variant="headingMd" as="h6">
         Ingredients:
       </Text>
@@ -86,7 +86,7 @@ const RecipeIngredients = ({
           />
         );
       })}
-    </VerticalStack>
+    </BlockStack>
   );
 };
 
