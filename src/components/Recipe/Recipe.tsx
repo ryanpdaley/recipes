@@ -145,7 +145,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
       // <Button outline icon={PrintMajor}>
       //   Print Recipe
       // </Button>
-      <Button outline>Print Recipe</Button>
+      <Button >Print Recipe</Button>
     );
   }, []);
 
@@ -154,7 +154,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
       // <Button disabled={shoppingListState} icon={CartMajor} outline>
       //   Print Shopping List
       // </Button>
-      <Button disabled={shoppingListState} outline>
+      <Button disabled={shoppingListState} >
         Print Shopping List
       </Button>
     );
