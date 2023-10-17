@@ -1,7 +1,7 @@
 import "./../../styles.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Card, Button, Text, BlockStack, InlineStack } from "@shopify/polaris";
-// import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
+import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
 import RecipeHead from "./components/RecipeHead/RecipeHead";
 import MetaHead from "./components/MetaHead/MetaHead";
 import {
@@ -136,19 +136,19 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
 
   const reactToPrintTriggerRecipe = useCallback(() => {
     return (
-      // <Button outline icon={PrintMajor}>
-      //   Print Recipe
-      // </Button>
-      <Button>Print Recipe</Button>
+      <Button outline icon={PrintMajor}>
+        Print Recipe
+      </Button>
+      // <Button>Print Recipe</Button>
     );
   }, []);
 
   const reactToPrintTriggerShoppingList = useCallback(() => {
     return (
-      // <Button disabled={shoppingListState} icon={CartMajor} outline>
-      //   Print Shopping List
-      // </Button>
-      <Button disabled={shoppingListState}>Print Shopping List</Button>
+      <Button disabled={shoppingListState} icon={CartMajor} outline>
+        Print Shopping List
+      </Button>
+      // <Button disabled={shoppingListState}>Print Shopping List</Button>
     );
   }, [shoppingListState]);
 
