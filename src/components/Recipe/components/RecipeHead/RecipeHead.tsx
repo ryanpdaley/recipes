@@ -4,7 +4,7 @@ import {
   HorizontalGrid,
   Text,
   Link,
-  HorizontalStack,
+  InlineStack,
   Divider,
 } from "@shopify/polaris";
 
@@ -73,7 +73,7 @@ const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
   const sourceURL = recipeInfo.source?.url;
   if (sourceLabel === undefined) return <></>;
   return (
-    <HorizontalStack align="end">
+    <InlineStack align="end">
       <Text
         variant="bodyMd"
         color="subdued"
@@ -103,7 +103,7 @@ const SourceBlock = ({ recipeInfo }: RecipeInfoProps) => {
           </Text>
         </Link>
       )}
-    </HorizontalStack>
+    </InlineStack>
   );
 };
 

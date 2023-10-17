@@ -5,7 +5,7 @@ import {
   Button,
   Text,
   VerticalStack,
-  HorizontalStack,
+  InlineStack,
 } from "@shopify/polaris";
 // import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
 import RecipeHead from "./components/RecipeHead/RecipeHead";
@@ -72,7 +72,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
         <VerticalStack>
           <RecipeHead recipeInfo={recipe["info"]} />
           <div className="recipe-print-container">
-            <HorizontalStack>
+            <InlineStack>
               <div className="recipe-print-button">
                 <ReactToPrint
                   content={reactToPrintContentRecipe}
@@ -87,7 +87,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
                   trigger={reactToPrintTriggerShoppingList}
                 />
               </div>
-            </HorizontalStack>
+            </InlineStack>
           </div>
           <div className="recipe-body">
             {isVisible && isTabletOrMobile ? (
