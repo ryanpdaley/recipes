@@ -3,7 +3,7 @@ import type { recipeDirectionsProps } from "../../../../../../types";
 
 const RecipeDirections = ({ recipeDirections }: recipeDirectionsProps) => {
   return (
-    <BlockStack gap="1">
+    <BlockStack gap="100">
       <Text variant="headingMd" as="h6">
         Directions:
       </Text>

@@ -9,7 +9,7 @@ export const MobileRecipeBodyComponent = ({
   setCheckedItems,
 }: RecipeBodyProps) => {
   return (
-    <BlockStack gap="5">
+    <BlockStack gap="100">
       <RecipeIngredients
         recipeIngredients={recipe.ingredients}
         checkedItems={checkedItems}
@@ -25,7 +25,7 @@ export const RecipeBodyComponent = ({
   setCheckedItems,
 }: RecipeBodyProps) => {
   return (
-    <InlineGrid gap="2" columns={["oneThird", "twoThirds"]}>
+    <InlineGrid gap="100" columns={["oneThird", "twoThirds"]}>
       <RecipeIngredients
         recipeIngredients={recipe.ingredients}
         checkedItems={checkedItems}

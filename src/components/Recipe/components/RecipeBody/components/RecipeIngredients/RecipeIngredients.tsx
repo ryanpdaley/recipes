@@ -72,7 +72,7 @@ const RecipeIngredients = ({
   setCheckedItems,
 }: RecipeIngredientsProps) => {
   return (
-    <BlockStack gap="1">
+    <BlockStack gap="100">
       <Text variant="headingMd" as="h6">
         Ingredients:
       </Text>

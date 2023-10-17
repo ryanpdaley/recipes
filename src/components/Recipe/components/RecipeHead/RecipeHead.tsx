@@ -111,7 +111,7 @@ const RecipeHead = ({ recipeInfo }: RecipeInfoProps) => {
   return (
     <div className="recipe-head">
       <Card>
-        <BlockStack gap="5">
+        <BlockStack gap="500">
           <Description recipeInfo={recipeInfo} />
           <Divider />
           <MetaInfo recipeInfo={recipeInfo} />
