@@ -1,4 +1,4 @@
-import { HorizontalGrid, VerticalStack } from "@shopify/polaris";
+import { HorizontalGrid, BlockStack } from "@shopify/polaris";
 import { RecipeBodyProps } from "../../../../types";
 import RecipeIngredients from "./components/RecipeIngredients/RecipeIngredients";
 import RecipeDirections from "./components/RecipeDirections/RecipeDirections";
@@ -9,14 +9,14 @@ export const MobileRecipeBodyComponent = ({
   setCheckedItems,
 }: RecipeBodyProps) => {
   return (
-    <VerticalStack gap="5">
+    <BlockStack gap="5">
       <RecipeIngredients
         recipeIngredients={recipe.ingredients}
         checkedItems={checkedItems}
         setCheckedItems={setCheckedItems}
       />
       <RecipeDirections recipeDirections={recipe.directions} />
-    </VerticalStack>
+    </BlockStack>
   );
 };
 export const RecipeBodyComponent = ({

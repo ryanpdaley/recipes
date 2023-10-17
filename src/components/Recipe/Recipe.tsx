@@ -4,7 +4,7 @@ import {
   Card,
   Button,
   Text,
-  VerticalStack,
+  BlockStack,
   InlineStack,
 } from "@shopify/polaris";
 // import { PrintMajor, CartMajor } from "@shopify/polaris-icons";
@@ -69,7 +69,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
     if (recipe === null) return null;
     else
       return (
-        <VerticalStack>
+        <BlockStack>
           <RecipeHead recipeInfo={recipe["info"]} />
           <div className="recipe-print-container">
             <InlineStack>
@@ -104,7 +104,7 @@ const Recipe = ({ selectedRecipe }: SelectedRecipeProps) => {
               />
             )}
           </div>
-        </VerticalStack>
+        </BlockStack>
       );
   };
 

@@ -1,6 +1,6 @@
 import {
   Card,
-  VerticalStack,
+  BlockStack,
   HorizontalGrid,
   Text,
   Link,
@@ -111,12 +111,12 @@ const RecipeHead = ({ recipeInfo }: RecipeInfoProps) => {
   return (
     <div className="recipe-head">
       <Card>
-        <VerticalStack gap="5">
+        <BlockStack gap="5">
           <Description recipeInfo={recipeInfo} />
           <Divider />
           <MetaInfo recipeInfo={recipeInfo} />
           <SourceBlock recipeInfo={recipeInfo} />
-        </VerticalStack>
+        </BlockStack>
       </Card>
     </div>
   );
