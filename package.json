@@ -55,6 +55,6 @@
     ]
   },
   "resolutions": {
-    "@types/react": "18.0.28"
+    "@types/react": "18.2.28"
   }
 }
