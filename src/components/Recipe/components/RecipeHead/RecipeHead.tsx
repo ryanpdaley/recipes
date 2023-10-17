@@ -1,7 +1,7 @@
 import {
   Card,
   BlockStack,
-  HorizontalGrid,
+  InlineGrid,
   Text,
   Link,
   InlineStack,
@@ -59,11 +59,11 @@ const MetaInfo = ({ recipeInfo }: RecipeInfoProps) => {
 
   return (
     <div className="recipe-data">
-      <HorizontalGrid columns={blockCount}>
+      <InlineGrid columns={blockCount}>
         {yieldBlock}
         {cookTimeBlock}
         {prepTimeBlock}
-      </HorizontalGrid>
+      </InlineGrid>
     </div>
   );
 };
