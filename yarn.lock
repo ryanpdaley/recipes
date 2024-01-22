@@ -1723,10 +1723,10 @@
   dependencies:
     deepmerge "^4.3.1"
 
-"@shopify/polaris@^12.9.1":
-  version "12.9.1"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-12.9.1.tgz#7de228822fad72077a3f8c6428161e19631db696"
-  integrity sha512-+RahHHzd4f7DxasChrZarsGqdcJOzS6GfVEKkjDUuljZfWfY0d7CQeJa1JtpnRt/h0xMZn/Db/oB8Vmv9FgutA==
+"@shopify/polaris@^12.10.0":
+  version "12.10.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-12.10.0.tgz#cfb4645e4c6d8dbba36c16377371374bf4c22759"
+  integrity sha512-i1BY/WazTcExnUdba8XUWGScAGBjfEW4R95ndk10NX2SKEzD6krFtFMTTSAECzcdSqlcblsKvDe1jd1/FlzA6w==
   dependencies:
     "@shopify/polaris-icons" "^8.0.0"
     "@shopify/polaris-tokens" "^8.5.0"
