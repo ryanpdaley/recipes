@@ -1711,10 +1711,10 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.5.1.tgz#5f1b518ec5fa54437c0b7c4a821546c64fed6922"
   integrity sha512-6i/8UoL0P5y4leBIGzvkZdS85RDMG9y1ihZzmTZQ5LdHUYmZ7pKFoj8X0236s3lusPs1Fa5HTQUpwI+UfTcmeA==
 
-"@shopify/polaris-icons@^8.2.0":
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-8.2.0.tgz#b8925ab8dd3d2628c04a46510e66d1e58b1a83a5"
-  integrity sha512-Lb8ij+kGfOUNpYTFZE22Scb+JtykmspZOr6FilxFENzotj/9OcsUbO2/qv3ov8G4XBHUdK1UbrnjFTEes0uzQA==
+"@shopify/polaris-icons@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-8.3.0.tgz#76b6ef920d74e2a7e77ec6eb0331e38b685ace5e"
+  integrity sha512-V1EhB7vEz4wpVpco/ZvYwc6q8cRrlhI5OoJGqzAF/bMe9VkUWQLuHF+rVrKVOzvrppdyRMwMfI9ghSP/OsN8JQ==
 
 "@shopify/polaris-tokens@^8.8.0":
   version "8.8.0"
@@ -1723,12 +1723,12 @@
   dependencies:
     deepmerge "^4.3.1"
 
-"@shopify/polaris@^12.15.0":
-  version "12.15.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-12.15.0.tgz#86e63dacf4fa71261b0c559c5652396b51c1690e"
-  integrity sha512-b7vyM4Hmj8xmFWj2d1SAXr0DrX0PfgLuGfRD7mwvTq0r8lr3XhjbhfVGWGsl94KVlow1LTzGkdDSF/hLUSflgA==
+"@shopify/polaris@^12.16.0":
+  version "12.16.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-12.16.0.tgz#608cf617be1b362b6ed0e62b285a8e3750fee4ee"
+  integrity sha512-p/abdr3SHDcxszBqVAZoOXt8NPYxHFfVDibLnEv+MkNelb4glTbZDKCfltNvRlJt4LplQvq7bUrY5Ddv9A/Vjw==
   dependencies:
-    "@shopify/polaris-icons" "^8.2.0"
+    "@shopify/polaris-icons" "^8.3.0"
     "@shopify/polaris-tokens" "^8.8.0"
     "@types/react" "^18.2.0"
     "@types/react-dom" "^18.2.0"
